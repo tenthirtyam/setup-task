@@ -1,0 +1,285 @@
+---
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+env:
+  TASK_VERSION: '3.43.1'
+
+jobs:
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
+  test-latest:
+    name: Test:latest
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version: latest
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          vars:
+            GREETING: "Hello, GitHub Actions!"
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Prints a greeting.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+
+            version:
+              desc: Prints the version of Task.
+              cmds:
+                - task --version
+              silent: true
+          EOF
+      - name: Run Task
+        run: |
+          task
+          task hello GREETING="This is a test for the latest version."
+          task version
+  test-version:
+    name: Test:version
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version: ${{ env.TASK_VERSION }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          vars:
+            GREETING: "Hello, GitHub Actions!"
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Prints a greeting.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+
+            version:
+              desc: Prints the version of Task.
+              cmds:
+                - task --version
+              silent: true
+          EOF
+      - name: Run Task
+        run: |
+          task
+          task hello GREETING="This is the test for a pinned version."
+          task version
+  test-version-file:
+    name: Test:version-file
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Version File
+        run: |
+          echo "${{ env.TASK_VERSION }}" > .task-version
+          echo "Setting version explicitly to ${{ env.TASK_VERSION }} in the .task-version file."
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version-from-file: '.task-version'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-cache: false
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          vars:
+            GREETING: "Hello, GitHub Actions!"
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Prints a greeting.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+
+            version:
+              desc: Prints the version of Task.
+              cmds:
+                - task --version
+              silent: true
+          EOF
+      - name: Verify Version
+        run: |
+          task version | grep "${{ env.TASK_VERSION }}"
+      - name: Run Task
+        run: |
+          task
+          task hello GREETING="This is test using a version from a file."
+  test-skip-cache:
+    name: Test:skip-cache
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version: ${{ env.TASK_VERSION }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-cache: true
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          vars:
+            GREETING: "Hello, GitHub Actions!"
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Prints a greeting.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+
+            version:
+              desc: Prints the version of Task.
+              cmds:
+                - task --version
+              silent: true
+          EOF
+      - name: Run Task
+        run: |
+          task
+          task hello GREETING="This is the test for a non-cached pinned version."
+          task version
+  test-cache:
+    name: Test:cache
+    needs: test-skip-cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version: ${{ env.TASK_VERSION }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-cache: false
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          vars:
+            GREETING: "Hello, GitHub Actions!"
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Prints a greeting.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+
+            version:
+              desc: Prints the version of Task.
+              cmds:
+                - task --version
+              silent: true
+          EOF
+      - name: Run Task
+        run: |
+          task
+          task hello GREETING="This is the test for a cached pinned version."
+          task version
+  test-vars:
+    name: Test:vars
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Task
+        uses: tenthirtyam/setup-task@main
+        with:
+          version: latest
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vars: |
+            FOO: "Hello, FOO!"
+            BAZ: "Hello, BAZ!"
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+
+          tasks:
+            default:
+              desc: Prints variables.
+              cmds:
+                - echo "FOO is $FOO"
+                - echo "BAZ is $BAZ"
+              silent: true
+          EOF
+      - name: Run Task
+        run: |
+          task

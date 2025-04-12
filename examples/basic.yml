@@ -1,0 +1,62 @@
+---
+name: Basic Example
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Task with basic features.
+      - name: Setup Task with Basic Features
+        uses: tenthirtyam/setup-task@v1
+        with:
+          # Specify version (can be 'latest', specific version like '3.43.1', etc.)
+          version: latest
+          # Provide GitHub token for authentication.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Verify task installation.
+      - name: Verify Task Installation
+        run: task --version
+
+      # Create a Taskfile.
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: '3'
+
+          vars:
+            GREETING: Hello, World!
+
+          tasks:
+            default:
+              desc: Runs the hello task by default.
+              cmds:
+                - echo "Running default task..."
+                - task: hello
+              silent: true
+
+            hello:
+              desc: Say hello.
+              cmds:
+                - echo "{{.GREETING}}"
+              silent: true
+          EOF
+
+      # Run Task
+      - name: Run Task
+        run: |
+          # Run default task.
+          task
+
+          # Run with custom variable.
+          task hello GREETING="Hello from GitHub Actions!"

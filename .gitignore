@@ -1,0 +1,17 @@
+# Operating System Files
+.DS_Store
+
+# Backup Files
+*.bak
+
+# Log Files
+*.log
+*~
+
+# Editor Directories and Files
+.idea/
+.vscode/
+
+# Build Directories
+.licenses/
+node_modules/

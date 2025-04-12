@@ -1,0 +1,57 @@
+---
+name: Version from File Example
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  setup-task:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Task using version from file.
+      - name: Setup Task with Version from File
+        uses: tenthirtyam/setup-task@v1
+        with:
+          # Use version-from-file to read the version from a file.
+          # IMPORTANT: Do not specify 'version' input when using 'version-from-file'
+          # If both are specified, the action will fail with an error.
+          version-from-file: '.task-version'
+          # Provide GitHub token for authentication.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Create a file with the version number.
+      - name: Create Version File
+        run: |
+          echo "3.42.0" > .task-version
+          echo "Created .task-version file with version 3.42.0."
+
+      # Verify task installation and version.
+      - name: Verify Task Installation and Version
+        run: |
+          task --version
+          echo "Expected version: $(cat .task-version)"
+
+      # Create a Taskfile.
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+          
+          tasks:
+            default:
+              desc: Reads version from file.
+              cmds:
+                - echo "Task installed using version from file: $(task --version)"
+              silent: true
+          EOF
+
+      # Run Task
+      - name: Run Task
+        run: task

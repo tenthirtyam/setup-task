@@ -1,0 +1,51 @@
+name: Variables Example
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  setup-task:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Task with variables.
+      - name: Setup Task with Variables
+        uses: tenthirtyam/setup-task@v1
+        with:
+          # Specify version (can be 'latest', specific version like '3.43.1', etc.)
+          version: latest
+          # Provide GitHub token for authentication.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Specify variables to be used in the Taskfile.
+          vars: |
+            FOO=bar
+            BAZ=qux
+
+      # Create a taskfile with variables.
+      - name: Create Taskfile
+        run: |
+          cat > Taskfile.yml <<EOF
+          version: "3"
+          
+          tasks:
+            default:
+              desc: Prints variables.
+              cmds:
+                - echo "FOO is \$FOO"
+                - echo "BAZ is \$BAZ"
+              silent: true
+          EOF
+
+      # Verify task installation.
+      - name: Verify Task Installation
+        run: task --version
+
+      # Run Task with variables.
+      - name: Run Task
+        run: task

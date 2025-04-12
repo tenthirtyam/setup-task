@@ -1,0 +1,49 @@
+---
+name: Enhancement
+description: Suggest an enhancement or feature to improve the action.
+title: Add support for {{ description }}
+labels: [enhancement]
+assignees: [tenthirtyam]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing an enhancement or feature, please [search the existing issues](https://github.com/hashicorp/terraform-provider-vsphere/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) for related requests, and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing requests.
+
+        When filing an enhancement issue, please include the following information.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A written overview of the enhancement or feature.
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case(s)
+      description: Please provide a use case or scenario.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Potential GitHub Action Configuration
+      description: |
+        Provide a potential GitHub Action configuration.
+        Learn more about [Quoting Code](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#quoting-code).
+      placeholder: |
+        Please format any code in code blocks using the markdown editor.
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Please provide any related GitHub issues or pull requests (open or closed) or documentation.
+        Learn about [Referencing Github Issues and Pull Requests](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#referencing-issues-and-pull-requests).
+      placeholder: |
+        #GH-0000
+    validations:
+      required: false

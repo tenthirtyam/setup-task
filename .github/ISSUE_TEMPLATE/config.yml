@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/tenthirtyam/setup-task/discussions
+    about: Need help with this GitHub Action? Ask a question in Discussions.
+  - name: Task Documentation
+    url: https://taskfile.dev
+    about: Need help with Task in general? Check out the Task documentation.
+  - name: Sponsor this Project
+    url: https://github.com/sponsors/tenthirtyam
+    about: Support this project by sponsoring it on GitHub.
+  - name: Buy Me a Coffee
+    url: https://buymeacoffee.com/tenthirtyam
+    about: Support this project by buying me a coffee.

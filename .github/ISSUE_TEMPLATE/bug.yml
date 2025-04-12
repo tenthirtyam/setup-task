@@ -1,0 +1,98 @@
+---
+name: Bug
+description: Report a bug or unexpected behavior in the action.
+labels: [bug]
+assignees: [tenthirtyam]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing an issue, please [search the existing issues](https://github.com/tenthirtyam/setup-task/issues?q=is%3Aissue+is%3Aopen+label%3Abug) (open or closed), and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing issues.
+
+        When filing an issue, please include the following information.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: |
+        Please provide the version.
+        We recommend testing with [the latest version of the action](https://github.com/tenthirtyam/setup-task/releases/latest).
+      placeholder: e.g. x.y.z
+    validations:
+      required: true
+  - type: dropdown
+    id: runner
+    attributes:
+      label: Runner
+      description: Select the GitHub runner where the issue occurs.
+      options:
+        - ubuntu
+        - windows
+        - macos
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a clear and concise description of the issue you are experiencing.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: GitHub Action Configuration
+      description: |
+        - Please provide a code repository, [GitHub Gist](https://gist.github.com/), or simplified code sample suitable for issue reproduction.
+        - Please ensure all secrets and identifiable information is removed.
+        - Please format any code in code blocks using the markdown editor.
+
+        Learn more about [Quoting Code](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#quoting-code).
+      placeholder: |
+        Please format any code in code blocks using the markdown editor.
+    validations:
+      required: true
+  - type: textarea
+    id: debug
+    attributes:
+      label: Debug Output
+      description: |
+        Please provide a link to a [GitHub Gist](https://gist.github.com/) containing the complete debug output.
+      placeholder: |
+        Link to a GitHub Gist. Please do not paste the debug output in the issue.
+    validations:
+      required: false
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: |
+        What is it you expected to happen?
+        This should be a description of how the functionality you tried to use is supposed to work.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened that's different from the expected behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide the steps to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Please provide any related GitHub issues or pull requests (open or closed) or documentation.
+        Learn about [Referencing Github Issues and Pull Requests](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#referencing-issues-and-pull-requests).
+      placeholder: |
+        #GH-0000
+    validations:
+      required: false

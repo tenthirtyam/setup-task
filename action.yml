@@ -1,0 +1,48 @@
+# Copyright (c) 2025 Ryan Johnson
+# SPDX-License-Identifier: MIT
+
+name: Setup Task (go-task/task)
+description: Sets up the Task (go-task/task) in GitHub Actions workflows.
+author: Ryan Johnson
+branding:
+  icon: settings
+  color: green
+
+inputs:
+  version:
+    description: Specifies the Task version to install (e.g., 'latest', '3.42.0'). Conflicts with 'version-from-file' as they are mutually exclusive.
+    required: false
+    default: latest
+
+  version-from-file:
+    description: Path to a file containing the Task version to install (e.g., '.task-version'). Conflicts with 'version' as they are mutually exclusive.
+    required: false
+    default: ''
+
+  skip-cache:
+    description: Determines whether to skip using the cache.
+    required: false
+    default: 'false'
+
+  github-token:
+    description: A GitHub token to use for authentication. Defaults to the GITHUB_TOKEN secret.
+    required: false
+    default: ''
+
+  verbose:
+    description: Enable detailed logging for debugging purposes.
+    required: false
+    default: 'false'
+
+  vars:
+    description: Custom variables for the Task CLI, provided as a YAML map.
+    required: false
+    default: '{}'
+
+outputs:
+  task-path:
+    description: Provides the path to the installed Task executable.
+
+runs:
+  using: node24
+  main: dist/index.js

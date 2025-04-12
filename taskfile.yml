@@ -1,0 +1,161 @@
+# Copyright (c) 2025 Ryan Johnson
+# SPDX-License-Identifier: MIT
+
+# Taskfile for running development tasks, tests, linting, and build operations.
+
+version: '3'
+
+vars:
+  NODE_MEM: 4096
+
+tasks:
+  # Core tasks.
+  clean:
+    desc: Clean build artifacts.
+    cmds:
+      - echo "==> Cleaning build artifacts..."
+      - rm -rf dist coverage
+
+  build:
+    desc: Build the TypeScript source.
+    cmds:
+      - echo "==> Building TypeScript source..."
+      - npx tsc
+
+  lint:
+    desc: Run ESLint checks.
+    cmds:
+      - echo "==> Running ESLint checks..."
+      - npx eslint 'src/**/*.ts' '__tests__/**/*.ts'
+
+  lint:fix:
+    desc: Fix ESLint issue detections.
+    cmds:
+      - echo "==> Fixing ESLint issue detections..."
+      - npx eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'
+
+  format:
+    desc: Format code.
+    cmds:
+      - echo "==> Formatting code..."
+      - npx prettier --write 'src/**/*.ts' '__tests__/**/*.ts'
+
+  # Testing tasks.
+  test:
+    desc: Run all tests with memory optimization.
+    vars:
+      JEST_OPTS: --runInBand --detectOpenHandles --forceExit
+    cmds:
+      - echo "==> Running all tests with memory optimization..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}}
+
+  test:unit:
+    desc: Run unit tests.
+    vars:
+      JEST_OPTS: --runInBand --detectOpenHandles --forceExit
+    cmds:
+      - echo "==> Running unit tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/cache.test.ts __tests__/installer.test.ts __tests__/utils-basic.test.ts __tests__/utils-file.test.ts
+
+  test:components:
+    desc: Run component tests.
+    vars:
+      JEST_OPTS: --runInBand --detectOpenHandles --forceExit
+    cmds:
+      - echo "==> Running cache tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/cache.test.ts
+      - echo "==> Running installer tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/installer.test.ts
+      - echo "==> Running basic utility tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-basic.test.ts
+      - echo "==> Running file operation tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-file.test.ts
+      - echo "==> Running network operation tests..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-network.test.ts
+
+  test:mem-light:
+    desc: Run lightweight tests.
+    vars:
+      JEST_OPTS: --runInBand
+    cmds:
+      - echo "==> Running lightweight tests..."
+      - node --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/cache.test.ts __tests__/installer.test.ts
+
+  test:coverage:
+    desc: Run tests with coverage reporting.
+    vars:
+      JEST_OPTS: --runInBand --detectOpenHandles --forceExit --coverage
+    cmds:
+      - echo "==> Running tests with coverage reporting..."
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}}
+
+  # Development tasks.
+  dev:all:
+    desc: Run the full development workflow.
+    cmds:
+      - task: clean
+      - task: build
+      - task: lint
+      - task: test:unit
+
+  ci:preflight:
+    desc: Run all checks that CI would run, useful before pushing changes.
+    cmds:
+      - task: clean
+      - task: build
+      - task: lint
+      - task: test:components
+
+  # Release helpers.
+  generate-notice:
+    desc: Add third-party licenses in NOTICE.md.
+    cmds:
+      - echo "==> Adding third-party licenses to NOTICE.md..."
+      - mkdir -p .licenses
+      - npx license-checker --json > .licenses/licenses.json
+      - node scripts/generate-notice.js
+
+  release:prepare:
+    desc: Prepare the code for a release (build, test, lint, bundle).
+    cmds:
+      - npm ci
+      - task: clean
+      - npm run build
+      - task: lint
+      - task: test:components
+      - task: generate-notice
+      - git add dist
+      - echo "==> Ready for release!"
+
+  check:dependencies:
+    desc: Check for outdated or unused dependencies.
+    cmds:
+      - echo "==> Checking for outdated dependencies..."
+      - npx npm-check-updates || true
+      - echo "==> Checking for unused dependencies..."
+      - npx depcheck || true
+      - echo "==> Run 'task update:dependencies' to update packages"
+  
+  update:dependencies:
+    desc: Update all dependencies to their latest versions.
+    cmds:
+      - echo "==> Creating backup of package files..."
+      - cp package.json package.json.bak || true
+      - cp package-lock.json package-lock.json.bak || true
+      - echo "==> Updating dependencies to latest versions..."
+      - npx npm-check-updates -u
+      - echo "==> Installing updated packages..."
+      - npm install
+      - echo "==> Running tests to verify updates..."
+      - npm test || { echo "Tests failed after update, consider reverting with 'task update:dependencies:revert'"; exit 1; }
+      - echo "==> Dependencies updated successfully!"
+  
+  update:dependencies:revert:
+    desc: Revert to backup package files if update fails.
+    cmds:
+      - echo "==> Reverting to backup package files..."
+      - test -f package.json.bak && mv package.json.bak package.json || echo "No package.json backup found"
+      - test -f package-lock.json.bak && mv package-lock.json.bak package-lock.json || echo "No package-lock.json backup found"
+      - echo "==> Reinstalling original dependencies..."
+      - npm install
+      - echo "==> Reverted to previous dependency state"
