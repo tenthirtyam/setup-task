@@ -25,11 +25,11 @@
   "author": "Ryan Johnson",
   "license": "MIT",
   "dependencies": {
-    "@actions/cache": "^4.0.5",
+    "@actions/cache": "^4.1.0",
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
     "@actions/tool-cache": "^2.0.2",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
