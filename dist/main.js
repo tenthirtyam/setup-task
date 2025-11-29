@@ -260,7 +260,7 @@ function processEnvVars(inputValue) {
                 for (const [key, value] of Object.entries(envVars)) {
                     if (key) {
                         const trimmedKey = key.trim();
-                        const trimmedValue = (value === null || value === void 0 ? void 0 : value.trim()) || '';
+                        const trimmedValue = value?.trim() || '';
                         process.env[trimmedKey] = trimmedValue;
                         // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
                         logger.exportVariable(trimmedKey, trimmedValue);
@@ -289,7 +289,7 @@ function processEnvVars(inputValue) {
                 const [, key, value] = match;
                 if (key) {
                     const trimmedKey = key.trim();
-                    const trimmedValue = (value === null || value === void 0 ? void 0 : value.trim()) || '';
+                    const trimmedValue = value?.trim() || '';
                     process.env[trimmedKey] = trimmedValue;
                     // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
                     logger.exportVariable(trimmedKey, trimmedValue);

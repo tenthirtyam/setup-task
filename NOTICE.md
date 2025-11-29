@@ -85,6 +85,8 @@ terms and conditions of the component's license.
 | [`@humanfs/node`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanwhocodes/module-importer`](https://github.com/humanwhocodes/module-importer) | Apache-2.0 |
 | [`@humanwhocodes/retry`](https://github.com/humanwhocodes/retry) | Apache-2.0 |
+| [`@isaacs/balanced-match`](https://github.com/isaacs/balanced-match) | MIT |
+| [`@isaacs/brace-expansion`](https://github.com/isaacs/brace-expansion) | MIT |
 | [`@isaacs/cliui`](https://github.com/yargs/cliui) | ISC |
 | [`@istanbuljs/load-nyc-config`](https://github.com/istanbuljs/load-nyc-config) | ISC |
 | [`@istanbuljs/schema`](https://github.com/istanbuljs/schema) | MIT |
@@ -111,9 +113,6 @@ terms and conditions of the component's license.
 | [`@jridgewell/set-array`](https://github.com/jridgewell/set-array) | MIT |
 | [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemap-codec) | MIT |
 | [`@jridgewell/trace-mapping`](https://github.com/jridgewell/trace-mapping) | MIT |
-| [`@nodelib/fs.scandir`](https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir) | MIT |
-| [`@nodelib/fs.stat`](https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat) | MIT |
-| [`@nodelib/fs.walk`](https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk) | MIT |
 | [`@pkgr/core`](https://github.com/un-ts/pkgr) | MIT |
 | [`@protobuf-ts/runtime-rpc`](https://github.com/timostamm/protobuf-ts) | Apache-2.0 |
 | [`@protobuf-ts/runtime`](https://github.com/timostamm/protobuf-ts) | (Apache-2.0 AND BSD-3-Clause) |
@@ -222,12 +221,11 @@ terms and conditions of the component's license.
 | [`exit-x`](https://github.com/gruntjs/node-exit-x) | MIT |
 | [`expect`](https://github.com/jestjs/jest) | MIT |
 | [`fast-deep-equal`](https://github.com/epoberezkin/fast-deep-equal) | MIT |
-| [`fast-glob`](https://github.com/mrmlnc/fast-glob) | MIT |
 | [`fast-json-stable-stringify`](https://github.com/epoberezkin/fast-json-stable-stringify) | MIT |
 | [`fast-levenshtein`](https://github.com/hiddentao/fast-levenshtein) | MIT |
 | [`fast-xml-parser`](https://github.com/NaturalIntelligence/fast-xml-parser) | MIT |
-| [`fastq`](https://github.com/mcollina/fastq) | ISC |
 | [`fb-watchman`](https://github.com/facebook/watchman) | Apache-2.0 |
+| [`fdir`](https://github.com/thecodrr/fdir) | MIT |
 | [`file-entry-cache`](https://github.com/jaredwray/file-entry-cache) | MIT |
 | [`fill-range`](https://github.com/jonschlinkert/fill-range) | MIT |
 | [`find-up`](https://github.com/sindresorhus/find-up) | MIT |
@@ -244,7 +242,7 @@ terms and conditions of the component's license.
 | [`get-proto`](https://github.com/ljharb/get-proto) | MIT |
 | [`get-stream`](https://github.com/sindresorhus/get-stream) | MIT |
 | [`glob-parent`](https://github.com/gulpjs/glob-parent) | ISC |
-| [`glob`](https://github.com/isaacs/node-glob) | ISC |
+| [`glob`](https://github.com/isaacs/node-glob) | BlueOak-1.0.0 |
 | [`globals`](https://github.com/sindresorhus/globals) | MIT |
 | [`gopd`](https://github.com/ljharb/gopd) | MIT |
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | ISC |
@@ -323,12 +321,11 @@ terms and conditions of the component's license.
 | [`makeerror`](https://github.com/daaku/nodejs-makeerror) | BSD-3-Clause |
 | [`math-intrinsics`](https://github.com/es-shims/math-intrinsics) | MIT |
 | [`merge-stream`](https://github.com/grncdr/merge-stream) | MIT |
-| [`merge2`](https://github.com/teambition/merge2) | MIT |
 | [`micromatch`](https://github.com/micromatch/micromatch) | MIT |
 | [`mime-db`](https://github.com/jshttp/mime-db) | MIT |
 | [`mime-types`](https://github.com/jshttp/mime-types) | MIT |
 | [`mimic-fn`](https://github.com/sindresorhus/mimic-fn) | MIT |
-| [`minimatch`](https://github.com/isaacs/minimatch) | ISC |
+| [`minimatch`](https://github.com/isaacs/minimatch) | BlueOak-1.0.0 |
 | [`minimist`](https://github.com/minimistjs/minimist) | MIT |
 | [`minipass`](https://github.com/isaacs/minipass) | ISC |
 | [`ms`](https://github.com/vercel/ms) | MIT |
@@ -361,13 +358,10 @@ terms and conditions of the component's license.
 | [`promise-polyfill`](https://github.com/taylorhakes/promise-polyfill) | MIT |
 | [`punycode`](https://github.com/mathiasbynens/punycode.js) | MIT |
 | [`pure-rand`](https://github.com/dubzzz/pure-rand) | MIT |
-| [`queue-microtask`](https://github.com/feross/queue-microtask) | MIT |
 | [`react-is`](https://github.com/facebook/react) | MIT |
 | [`require-directory`](https://github.com/troygoode/node-require-directory) | MIT |
 | [`resolve-cwd`](https://github.com/sindresorhus/resolve-cwd) | MIT |
 | [`resolve-from`](https://github.com/sindresorhus/resolve-from) | MIT |
-| [`reusify`](https://github.com/mcollina/reusify) | MIT |
-| [`run-parallel`](https://github.com/feross/run-parallel) | MIT |
 | [`sax`](https://github.com/isaacs/sax-js) | ISC |
 | [`semver`](https://github.com/npm/node-semver) | ISC |
 | [`setup-task-action`](#) | MIT |
@@ -389,6 +383,7 @@ terms and conditions of the component's license.
 | [`supports-color`](https://github.com/chalk/supports-color) | MIT |
 | [`synckit`](https://github.com/un-ts/synckit) | MIT |
 | [`test-exclude`](https://github.com/istanbuljs/test-exclude) | ISC |
+| [`tinyglobby`](https://github.com/SuperchupuDev/tinyglobby) | MIT |
 | [`tmpl`](https://github.com/daaku/nodejs-tmpl) | BSD-3-Clause |
 | [`to-regex-range`](https://github.com/micromatch/to-regex-range) | MIT |
 | [`tr46`](https://github.com/Sebmaster/tr46.js) | MIT |
