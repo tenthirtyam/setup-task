@@ -23,7 +23,6 @@ terms and conditions of the component's license.
 | [`@actions/http-client`](https://github.com/actions/toolkit) | MIT |
 | [`@actions/io`](https://github.com/actions/toolkit) | MIT |
 | [`@actions/tool-cache`](https://github.com/actions/toolkit) | MIT |
-| [`@ampproject/remapping`](https://github.com/ampproject/remapping) | Apache-2.0 |
 | [`@azure/abort-controller`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/core-auth`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/core-client`](https://github.com/Azure/azure-sdk-for-js) | MIT |
@@ -37,11 +36,13 @@ terms and conditions of the component's license.
 | [`@azure/logger`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/ms-rest-js`](https://github.com/Azure/ms-rest-js) | MIT |
 | [`@azure/storage-blob`](https://github.com/Azure/azure-sdk-for-js) | MIT |
+| [`@azure/storage-common`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@babel/code-frame`](https://github.com/babel/babel) | MIT |
 | [`@babel/compat-data`](https://github.com/babel/babel) | MIT |
 | [`@babel/core`](https://github.com/babel/babel) | MIT |
 | [`@babel/generator`](https://github.com/babel/babel) | MIT |
 | [`@babel/helper-compilation-targets`](https://github.com/babel/babel) | MIT |
+| [`@babel/helper-globals`](https://github.com/babel/babel) | MIT |
 | [`@babel/helper-module-imports`](https://github.com/babel/babel) | MIT |
 | [`@babel/helper-module-transforms`](https://github.com/babel/babel) | MIT |
 | [`@babel/helper-plugin-utils`](https://github.com/babel/babel) | MIT |
@@ -80,14 +81,12 @@ terms and conditions of the component's license.
 | [`@eslint/js`](https://github.com/eslint/eslint) | MIT |
 | [`@eslint/object-schema`](https://github.com/eslint/rewrite) | Apache-2.0 |
 | [`@eslint/plugin-kit`](https://github.com/eslint/rewrite) | Apache-2.0 |
-| [`@fastify/busboy`](https://github.com/fastify/busboy) | MIT |
 | [`@humanfs/core`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanfs/node`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanwhocodes/module-importer`](https://github.com/humanwhocodes/module-importer) | Apache-2.0 |
 | [`@humanwhocodes/retry`](https://github.com/humanwhocodes/retry) | Apache-2.0 |
 | [`@isaacs/balanced-match`](https://github.com/isaacs/balanced-match) | MIT |
-| [`@isaacs/brace-expansion`](https://github.com/isaacs/brace-expansion) | MIT |
-| [`@isaacs/cliui`](https://github.com/yargs/cliui) | ISC |
+| [`@isaacs/brace-expansion`](#) | MIT |
 | [`@istanbuljs/load-nyc-config`](https://github.com/istanbuljs/load-nyc-config) | ISC |
 | [`@istanbuljs/schema`](https://github.com/istanbuljs/schema) | MIT |
 | [`@jest/console`](https://github.com/jestjs/jest) | MIT |
@@ -108,15 +107,15 @@ terms and conditions of the component's license.
 | [`@jest/test-sequencer`](https://github.com/jestjs/jest) | MIT |
 | [`@jest/transform`](https://github.com/jestjs/jest) | MIT |
 | [`@jest/types`](https://github.com/jestjs/jest) | MIT |
-| [`@jridgewell/gen-mapping`](https://github.com/jridgewell/gen-mapping) | MIT |
+| [`@jridgewell/gen-mapping`](https://github.com/jridgewell/sourcemaps) | MIT |
+| [`@jridgewell/remapping`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@jridgewell/resolve-uri`](https://github.com/jridgewell/resolve-uri) | MIT |
-| [`@jridgewell/set-array`](https://github.com/jridgewell/set-array) | MIT |
-| [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemap-codec) | MIT |
-| [`@jridgewell/trace-mapping`](https://github.com/jridgewell/trace-mapping) | MIT |
+| [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemaps) | MIT |
+| [`@jridgewell/trace-mapping`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@pkgr/core`](https://github.com/un-ts/pkgr) | MIT |
 | [`@protobuf-ts/runtime-rpc`](https://github.com/timostamm/protobuf-ts) | Apache-2.0 |
 | [`@protobuf-ts/runtime`](https://github.com/timostamm/protobuf-ts) | (Apache-2.0 AND BSD-3-Clause) |
-| [`@sinclair/typebox`](https://github.com/sinclairzx81/typebox) | MIT |
+| [`@sinclair/typebox`](https://github.com/sinclairzx81/typebox-legacy) | MIT |
 | [`@sinonjs/commons`](https://github.com/sinonjs/commons) | BSD-3-Clause |
 | [`@sinonjs/fake-timers`](https://github.com/sinonjs/fake-timers) | BSD-3-Clause |
 | [`@types/babel__core`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
@@ -144,6 +143,7 @@ terms and conditions of the component's license.
 | [`@typescript-eslint/typescript-estree`](https://github.com/typescript-eslint/typescript-eslint) | MIT |
 | [`@typescript-eslint/utils`](https://github.com/typescript-eslint/typescript-eslint) | MIT |
 | [`@typescript-eslint/visitor-keys`](https://github.com/typescript-eslint/typescript-eslint) | MIT |
+| [`@typespec/ts-http-runtime`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@ungap/structured-clone`](https://github.com/ungap/structured-clone) | ISC |
 | [`@unrs/resolver-binding-darwin-arm64`](https://github.com/unrs/unrs-resolver) | MIT |
 | [`abort-controller`](https://github.com/mysticatea/abort-controller) | MIT |
@@ -163,6 +163,7 @@ terms and conditions of the component's license.
 | [`babel-preset-current-node-syntax`](https://github.com/nicolo-ribaudo/babel-preset-current-node-syntax) | MIT |
 | [`babel-preset-jest`](https://github.com/jestjs/jest) | MIT |
 | [`balanced-match`](https://github.com/juliangruber/balanced-match) | MIT |
+| [`baseline-browser-mapping`](https://github.com/web-platform-dx/baseline-browser-mapping) | Apache-2.0 |
 | [`brace-expansion`](https://github.com/juliangruber/brace-expansion) | MIT |
 | [`braces`](https://github.com/micromatch/braces) | MIT |
 | [`browserslist`](https://github.com/browserslist/browserslist) | MIT |
@@ -194,7 +195,6 @@ terms and conditions of the component's license.
 | [`delayed-stream`](https://github.com/felixge/node-delayed-stream) | MIT |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
 | [`dunder-proto`](https://github.com/es-shims/dunder-proto) | MIT |
-| [`eastasianwidth`](https://github.com/komagata/eastasianwidth) | MIT |
 | [`electron-to-chromium`](https://github.com/kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
@@ -246,7 +246,6 @@ terms and conditions of the component's license.
 | [`globals`](https://github.com/sindresorhus/globals) | MIT |
 | [`gopd`](https://github.com/ljharb/gopd) | MIT |
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | ISC |
-| [`graphemer`](https://github.com/flmnt/graphemer) | MIT |
 | [`handlebars`](https://github.com/handlebars-lang/handlebars.js) | MIT |
 | [`has-flag`](https://github.com/sindresorhus/has-flag) | MIT |
 | [`has-symbols`](https://github.com/inspect-js/has-symbols) | MIT |
@@ -315,7 +314,7 @@ terms and conditions of the component's license.
 | [`locate-path`](https://github.com/sindresorhus/locate-path) | MIT |
 | [`lodash.memoize`](https://github.com/lodash/lodash) | MIT |
 | [`lodash.merge`](https://github.com/lodash/lodash) | MIT |
-| [`lru-cache`](https://github.com/isaacs/node-lru-cache) | ISC |
+| [`lru-cache`](https://github.com/isaacs/node-lru-cache) | BlueOak-1.0.0 |
 | [`make-dir`](https://github.com/sindresorhus/make-dir) | MIT |
 | [`make-error`](https://github.com/JsCommunity/make-error) | ISC |
 | [`makeerror`](https://github.com/daaku/nodejs-makeerror) | BSD-3-Clause |
@@ -362,7 +361,7 @@ terms and conditions of the component's license.
 | [`require-directory`](https://github.com/troygoode/node-require-directory) | MIT |
 | [`resolve-cwd`](https://github.com/sindresorhus/resolve-cwd) | MIT |
 | [`resolve-from`](https://github.com/sindresorhus/resolve-from) | MIT |
-| [`sax`](https://github.com/isaacs/sax-js) | ISC |
+| [`sax`](https://github.com/isaacs/sax-js) | BlueOak-1.0.0 |
 | [`semver`](https://github.com/npm/node-semver) | ISC |
 | [`setup-task-action`](#) | MIT |
 | [`shebang-command`](https://github.com/kevva/shebang-command) | MIT |
