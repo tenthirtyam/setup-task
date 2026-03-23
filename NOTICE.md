@@ -85,8 +85,6 @@ terms and conditions of the component's license.
 | [`@humanfs/node`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanwhocodes/module-importer`](https://github.com/humanwhocodes/module-importer) | Apache-2.0 |
 | [`@humanwhocodes/retry`](https://github.com/humanwhocodes/retry) | Apache-2.0 |
-| [`@isaacs/balanced-match`](https://github.com/isaacs/balanced-match) | MIT |
-| [`@isaacs/brace-expansion`](#) | MIT |
 | [`@istanbuljs/load-nyc-config`](https://github.com/istanbuljs/load-nyc-config) | ISC |
 | [`@istanbuljs/schema`](https://github.com/istanbuljs/schema) | MIT |
 | [`@jest/console`](https://github.com/jestjs/jest) | MIT |
@@ -165,7 +163,6 @@ terms and conditions of the component's license.
 | [`balanced-match`](https://github.com/juliangruber/balanced-match) | MIT |
 | [`baseline-browser-mapping`](https://github.com/web-platform-dx/baseline-browser-mapping) | Apache-2.0 |
 | [`brace-expansion`](https://github.com/juliangruber/brace-expansion) | MIT |
-| [`braces`](https://github.com/micromatch/braces) | MIT |
 | [`browserslist`](https://github.com/browserslist/browserslist) | MIT |
 | [`bs-logger`](https://github.com/huafu/bs-logger) | MIT |
 | [`bser`](https://github.com/facebook/watchman) | Apache-2.0 |
@@ -223,11 +220,11 @@ terms and conditions of the component's license.
 | [`fast-deep-equal`](https://github.com/epoberezkin/fast-deep-equal) | MIT |
 | [`fast-json-stable-stringify`](https://github.com/epoberezkin/fast-json-stable-stringify) | MIT |
 | [`fast-levenshtein`](https://github.com/hiddentao/fast-levenshtein) | MIT |
+| [`fast-xml-builder`](https://github.com/NaturalIntelligence/fast-xml-builder) | MIT |
 | [`fast-xml-parser`](https://github.com/NaturalIntelligence/fast-xml-parser) | MIT |
 | [`fb-watchman`](https://github.com/facebook/watchman) | Apache-2.0 |
 | [`fdir`](https://github.com/thecodrr/fdir) | MIT |
 | [`file-entry-cache`](https://github.com/jaredwray/file-entry-cache) | MIT |
-| [`fill-range`](https://github.com/jonschlinkert/fill-range) | MIT |
 | [`find-up`](https://github.com/sindresorhus/find-up) | MIT |
 | [`flat-cache`](https://github.com/jaredwray/flat-cache) | MIT |
 | [`flatted`](https://github.com/WebReflection/flatted) | ISC |
@@ -264,7 +261,6 @@ terms and conditions of the component's license.
 | [`is-fullwidth-code-point`](https://github.com/sindresorhus/is-fullwidth-code-point) | MIT |
 | [`is-generator-fn`](https://github.com/sindresorhus/is-generator-fn) | MIT |
 | [`is-glob`](https://github.com/micromatch/is-glob) | MIT |
-| [`is-number`](https://github.com/jonschlinkert/is-number) | MIT |
 | [`is-stream`](https://github.com/sindresorhus/is-stream) | MIT |
 | [`isexe`](https://github.com/isaacs/isexe) | ISC |
 | [`istanbul-lib-coverage`](https://github.com/istanbuljs/istanbuljs) | BSD-3-Clause |
@@ -320,7 +316,6 @@ terms and conditions of the component's license.
 | [`makeerror`](https://github.com/daaku/nodejs-makeerror) | BSD-3-Clause |
 | [`math-intrinsics`](https://github.com/es-shims/math-intrinsics) | MIT |
 | [`merge-stream`](https://github.com/grncdr/merge-stream) | MIT |
-| [`micromatch`](https://github.com/micromatch/micromatch) | MIT |
 | [`mime-db`](https://github.com/jshttp/mime-db) | MIT |
 | [`mime-types`](https://github.com/jshttp/mime-types) | MIT |
 | [`mimic-fn`](https://github.com/sindresorhus/mimic-fn) | MIT |
@@ -345,6 +340,7 @@ terms and conditions of the component's license.
 | [`parent-module`](https://github.com/sindresorhus/parent-module) | MIT |
 | [`parse-json`](https://github.com/sindresorhus/parse-json) | MIT |
 | [`path-exists`](https://github.com/sindresorhus/path-exists) | MIT |
+| [`path-expression-matcher`](https://github.com/NaturalIntelligence/path-expression-matcher) | MIT |
 | [`path-key`](https://github.com/sindresorhus/path-key) | MIT |
 | [`path-scurry`](https://github.com/isaacs/path-scurry) | BlueOak-1.0.0 |
 | [`picocolors`](https://github.com/alexeyraspopov/picocolors) | ISC |
@@ -384,7 +380,6 @@ terms and conditions of the component's license.
 | [`test-exclude`](https://github.com/istanbuljs/test-exclude) | ISC |
 | [`tinyglobby`](https://github.com/SuperchupuDev/tinyglobby) | MIT |
 | [`tmpl`](https://github.com/daaku/nodejs-tmpl) | BSD-3-Clause |
-| [`to-regex-range`](https://github.com/micromatch/to-regex-range) | MIT |
 | [`tr46`](https://github.com/Sebmaster/tr46.js) | MIT |
 | [`ts-api-utils`](https://github.com/JoshuaKGoldberg/ts-api-utils) | MIT |
 | [`ts-jest`](https://github.com/kulshekhar/ts-jest) | MIT |
