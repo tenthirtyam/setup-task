@@ -51,6 +51,6 @@
     "inflight": "npm:lru-cache@^11.1.0",
     "glob": "^11.0.1",
     "form-data": ">=2.5.4",
-    "undici": "^6.23.0"
+    "undici": "^6.24.1"
   }
 }
