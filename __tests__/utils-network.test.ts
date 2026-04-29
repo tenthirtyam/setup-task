@@ -36,7 +36,12 @@ describe('utils - Network Operations', () => {
     const mocks = createMockHttpObjects(200);
     mockRequest = mocks.mockRequest;
     mockResponse = mocks.mockResponse;
-    setupHttpMocks(https as unknown as MockHttpsModule, http as unknown as MockHttpModule, mockRequest, mockResponse);
+    setupHttpMocks(
+      https as unknown as MockHttpsModule,
+      http as unknown as MockHttpModule,
+      mockRequest,
+      mockResponse
+    );
   });
 
   describe('fetchLatestRelease', () => {
@@ -61,7 +66,7 @@ describe('utils - Network Operations', () => {
         return Promise.resolve({
           json: () => Promise.resolve({ tag_name: 'v3.43.1' }),
           ok: true,
-          status: 200,
+          status: 200
         } as Response);
       });
 
@@ -149,6 +154,8 @@ describe('fetchLatestRelease', () => {
       json: async () => ({})
     });
 
-    await expect(fetchLatestRelease('test-token')).rejects.toThrow('Invalid response format or no releases found');
+    await expect(fetchLatestRelease('test-token')).rejects.toThrow(
+      'Invalid response format or no releases found'
+    );
   });
 });

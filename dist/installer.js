@@ -83,7 +83,7 @@ async function installTask(options) {
                     const errorMessage = error instanceof Error ? error.message : String(error);
                     // If the version cannot be retrieved, log the error and throw an error to stop the action.
                     core.error(`Failed to retrieve the latest version: ${errorMessage}`);
-                    throw new Error(`Unable to retrieve the latest version. Please specify a specific version instead of 'latest'.`);
+                    throw new Error(`Unable to retrieve the latest version. Please specify a specific version instead of 'latest'.`, { cause: error });
                 }
             })()
             : requestedVersion;
@@ -103,7 +103,7 @@ async function installTask(options) {
             }
             catch (error) {
                 const errorMessage = error instanceof Error ? error.message : String(error);
-                throw new Error(`Extraction failed. Error: ${errorMessage}`);
+                throw new Error(`Extraction failed. Error: ${errorMessage}`, { cause: error });
             }
         })();
         core.debug(`Task archive extracted to: ${extractedPath}`);

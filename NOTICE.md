@@ -77,7 +77,6 @@ terms and conditions of the component's license.
 | [`@eslint/config-array`](https://github.com/eslint/rewrite) | Apache-2.0 |
 | [`@eslint/config-helpers`](https://github.com/eslint/rewrite) | Apache-2.0 |
 | [`@eslint/core`](https://github.com/eslint/rewrite) | Apache-2.0 |
-| [`@eslint/eslintrc`](https://github.com/eslint/eslintrc) | MIT |
 | [`@eslint/js`](https://github.com/eslint/eslint) | MIT |
 | [`@eslint/object-schema`](https://github.com/eslint/rewrite) | Apache-2.0 |
 | [`@eslint/plugin-kit`](https://github.com/eslint/rewrite) | Apache-2.0 |
@@ -110,6 +109,7 @@ terms and conditions of the component's license.
 | [`@jridgewell/resolve-uri`](https://github.com/jridgewell/resolve-uri) | MIT |
 | [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@jridgewell/trace-mapping`](https://github.com/jridgewell/sourcemaps) | MIT |
+| [`@nodable/entities`](https://github.com/nodable/val-parsers) | MIT |
 | [`@pkgr/core`](https://github.com/un-ts/pkgr) | MIT |
 | [`@protobuf-ts/runtime-rpc`](https://github.com/timostamm/protobuf-ts) | Apache-2.0 |
 | [`@protobuf-ts/runtime`](https://github.com/timostamm/protobuf-ts) | (Apache-2.0 AND BSD-3-Clause) |
@@ -120,6 +120,7 @@ terms and conditions of the component's license.
 | [`@types/babel__generator`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
 | [`@types/babel__template`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
 | [`@types/babel__traverse`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
+| [`@types/esrecurse`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
 | [`@types/estree`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
 | [`@types/istanbul-lib-coverage`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
 | [`@types/istanbul-lib-report`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
@@ -253,7 +254,6 @@ terms and conditions of the component's license.
 | [`https-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | MIT |
 | [`human-signals`](https://github.com/ehmicky/human-signals) | Apache-2.0 |
 | [`ignore`](https://github.com/kaelzhang/node-ignore) | MIT |
-| [`import-fresh`](https://github.com/sindresorhus/import-fresh) | MIT |
 | [`import-local`](https://github.com/sindresorhus/import-local) | MIT |
 | [`imurmurhash`](https://github.com/jensyt/imurmurhash-js) | MIT |
 | [`is-arrayish`](https://github.com/qix-/node-is-arrayish) | MIT |
@@ -309,7 +309,6 @@ terms and conditions of the component's license.
 | [`lines-and-columns`](https://github.com/eventualbuddha/lines-and-columns) | MIT |
 | [`locate-path`](https://github.com/sindresorhus/locate-path) | MIT |
 | [`lodash.memoize`](https://github.com/lodash/lodash) | MIT |
-| [`lodash.merge`](https://github.com/lodash/lodash) | MIT |
 | [`lru-cache`](https://github.com/isaacs/node-lru-cache) | BlueOak-1.0.0 |
 | [`make-dir`](https://github.com/sindresorhus/make-dir) | MIT |
 | [`make-error`](https://github.com/JsCommunity/make-error) | ISC |
@@ -337,7 +336,6 @@ terms and conditions of the component's license.
 | [`p-locate`](https://github.com/sindresorhus/p-locate) | MIT |
 | [`p-try`](https://github.com/sindresorhus/p-try) | MIT |
 | [`package-json-from-dist`](https://github.com/isaacs/package-json-from-dist) | BlueOak-1.0.0 |
-| [`parent-module`](https://github.com/sindresorhus/parent-module) | MIT |
 | [`parse-json`](https://github.com/sindresorhus/parse-json) | MIT |
 | [`path-exists`](https://github.com/sindresorhus/path-exists) | MIT |
 | [`path-expression-matcher`](https://github.com/NaturalIntelligence/path-expression-matcher) | MIT |

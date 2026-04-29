@@ -13,15 +13,15 @@ exports.RELEASES_URL = exports.CACHE_DIR = exports.EXE_EXTENSION = exports.ARCH_
 exports.RELEASES_API_URL = 'https://api.github.com/repos/go-task/task/releases';
 // OS mapping for download paths.
 exports.OS_MAPPING = {
-    'win32': 'windows',
-    'darwin': 'darwin',
-    'linux': 'linux'
+    win32: 'windows',
+    darwin: 'darwin',
+    linux: 'linux'
 };
 // Architecture mapping for download paths.
 exports.ARCH_MAPPING = {
-    'x64': 'amd64',
-    'arm64': 'arm64',
-    'arm': 'arm'
+    x64: 'amd64',
+    arm64: 'arm64',
+    arm: 'arm'
 };
 // Extension for executable based on platform.
 exports.EXE_EXTENSION = process.platform === 'win32' ? '.exe' : '';

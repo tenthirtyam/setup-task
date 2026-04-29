@@ -52,9 +52,8 @@ export async function copyDirRecursive(src: string, dest: string): Promise<void>
 
     // For single file copy, use the file name if the destination is a directory.
     const fileName = path.basename(src);
-    const destPath = fs.existsSync(dest) && fs.statSync(dest).isDirectory()
-      ? path.join(dest, fileName)
-      : dest;
+    const destPath =
+      fs.existsSync(dest) && fs.statSync(dest).isDirectory() ? path.join(dest, fileName) : dest;
 
     // Copy with original permissions.
     fs.copyFileSync(src, destPath);
@@ -68,7 +67,7 @@ export async function copyDirRecursive(src: string, dest: string): Promise<void>
   }
 
   // Use a queue-based approach to avoid stack overflow with deep directory structures.
-  const queue: Array<{src: string, dest: string}> = [{ src, dest }];
+  const queue: Array<{ src: string; dest: string }> = [{ src, dest }];
 
   // Process entries in breadth-first order.
   while (queue.length > 0) {
@@ -138,7 +137,10 @@ export async function fetchLatestRelease(githubToken?: string): Promise<string> 
 
     return cleanVersionFromTag(data.tag_name);
   } catch (error: unknown) {
-    throw new Error(`Failed to fetch release information from ${RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`);
+    throw new Error(
+      `Failed to fetch release information from ${RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`,
+      { cause: error }
+    );
   }
 }
 

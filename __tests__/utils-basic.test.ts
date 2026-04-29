@@ -19,7 +19,7 @@ jest.mock('path');
 function setupPathAndOSMocks(): void {
   jest.resetAllMocks();
   (path.join as jest.Mock).mockImplementation((...parts) => parts.join('/'));
-  (path.dirname as jest.Mock).mockImplementation((p) => p.substring(0, p.lastIndexOf('/')));
+  (path.dirname as jest.Mock).mockImplementation(p => p.substring(0, p.lastIndexOf('/')));
   (os.tmpdir as jest.Mock).mockReturnValue('/tmp');
 }
 

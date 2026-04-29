@@ -87,9 +87,7 @@ async function copyDirRecursive(src, dest) {
         }
         // For single file copy, use the file name if the destination is a directory.
         const fileName = path.basename(src);
-        const destPath = fs.existsSync(dest) && fs.statSync(dest).isDirectory()
-            ? path.join(dest, fileName)
-            : dest;
+        const destPath = fs.existsSync(dest) && fs.statSync(dest).isDirectory() ? path.join(dest, fileName) : dest;
         // Copy with original permissions.
         fs.copyFileSync(src, destPath);
         fs.chmodSync(destPath, srcStats.mode);
@@ -159,7 +157,7 @@ async function fetchLatestRelease(githubToken) {
         return cleanVersionFromTag(data.tag_name);
     }
     catch (error) {
-        throw new Error(`Failed to fetch release information from ${constants_1.RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`);
+        throw new Error(`Failed to fetch release information from ${constants_1.RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
     }
 }
 /**

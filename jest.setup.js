@@ -11,32 +11,11 @@ const fetchMock = require('jest-fetch-mock');
 
 fetchMock.enableMocks();
 
-jest.mock('@actions/core', () => ({
-  getInput: jest.fn(),
-  setOutput: jest.fn(),
-  setFailed: jest.fn(),
-  info: jest.fn(),
-  debug: jest.fn(),
-  warning: jest.fn(),
-  error: jest.fn(),
-  exportVariable: jest.fn(),
-  addPath: jest.fn()
-}));
-
-jest.mock('@actions/tool-cache', () => ({
-  downloadTool: jest.fn(),
-  extractTar: jest.fn(),
-  extractZip: jest.fn()
-}));
-
-jest.mock('@actions/cache', () => ({
-  saveCache: jest.fn(),
-  restoreCache: jest.fn()
-}));
-
-jest.mock('@actions/exec', () => ({
-  exec: jest.fn()
-}));
+// Enable mocks for @actions packages (implementations in __mocks__ directory)
+jest.mock('@actions/core');
+jest.mock('@actions/tool-cache');
+jest.mock('@actions/cache');
+jest.mock('@actions/exec');
 
 // Mock fs
 jest.mock('fs', () => ({

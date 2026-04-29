@@ -17,7 +17,7 @@ function setupFileMocks(): void {
 
   // Mock path operations.
   (path.join as jest.Mock).mockImplementation((...parts) => parts.join('/'));
-  (path.dirname as jest.Mock).mockImplementation((p) => p.substring(0, p.lastIndexOf('/')));
+  (path.dirname as jest.Mock).mockImplementation(p => p.substring(0, p.lastIndexOf('/')));
 }
 
 describe('utils - File Operations', () => {
@@ -36,7 +36,7 @@ describe('utils - File Operations', () => {
 
     test('should handle file source', async () => {
       // Setup mocks
-      (fs.existsSync as jest.Mock).mockImplementation((path) => {
+      (fs.existsSync as jest.Mock).mockImplementation(path => {
         if (path === '/src/file.txt') return true;
         if (path === '/dest') return true;
         return false;
@@ -58,9 +58,7 @@ describe('utils - File Operations', () => {
 
     test('should create destination directory if it does not exist', async () => {
       // Setup mocks
-      (fs.existsSync as jest.Mock).mockImplementation((path) =>
-        path === '/src' ? true : false
-      );
+      (fs.existsSync as jest.Mock).mockImplementation(path => (path === '/src' ? true : false));
       (fs.statSync as jest.Mock).mockReturnValue({
         isDirectory: () => true,
         isFile: () => false,

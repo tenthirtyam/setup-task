@@ -80,7 +80,9 @@ function getTaskOptions(): TaskOptions {
 
   // Only throw an error if version-from-file is set AND version is explicitly set to something other than default
   if (versionFromFile && versionInput && versionInput !== 'latest') {
-    throw new Error('Both version and version-from-file inputs cannot be used together. Please specify only one.');
+    throw new Error(
+      'Both version and version-from-file inputs cannot be used together. Please specify only one.'
+    );
   }
 
   let version = 'latest';
@@ -93,7 +95,10 @@ function getTaskOptions(): TaskOptions {
         logger.debug(`Using version '${version}' from file ${versionFromFile}`);
       }
     } catch (error) {
-      throw new Error(`Failed to read version from file ${versionFromFile}: ${error instanceof Error ? error.message : String(error)}`);
+      throw new Error(
+        `Failed to read version from file ${versionFromFile}: ${error instanceof Error ? error.message : String(error)}`,
+        { cause: error }
+      );
     }
   } else if (versionInput) {
     version = versionInput;
@@ -228,7 +233,7 @@ async function verifyInstallation(): Promise<void> {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logger.error(`Task verification error: ${errorMessage}`);
-    throw new Error(`Task verification failed: ${errorMessage}`);
+    throw new Error(`Task verification failed: ${errorMessage}`, { cause: error });
   }
 }
 
@@ -271,12 +276,17 @@ export function processEnvVars(inputValue: string): boolean {
     } catch (yamlError) {
       // If YAML parsing fails, log the error but continue to try the key-value format.
       if (isVerbose) {
-        logger.debug(`YAML parsing failed, trying key-value format: ${yamlError instanceof Error ? yamlError.message : String(yamlError)}`);
+        logger.debug(
+          `YAML parsing failed, trying key-value format: ${yamlError instanceof Error ? yamlError.message : String(yamlError)}`
+        );
       }
     }
 
     // Parse as key-value pairs.
-    const lines = inputValue.split('\n').map(line => line.trim()).filter(Boolean);
+    const lines = inputValue
+      .split('\n')
+      .map(line => line.trim())
+      .filter(Boolean);
     for (const line of lines) {
       const match = line.match(/^([^=]+)=(.*)$/);
       if (match) {
@@ -298,7 +308,9 @@ export function processEnvVars(inputValue: string): boolean {
 
     return true;
   } catch (error) {
-    logger.warning(`Error processing variables: ${error instanceof Error ? error.message : String(error)}`);
+    logger.warning(
+      `Error processing variables: ${error instanceof Error ? error.message : String(error)}`
+    );
     return false;
   }
 }

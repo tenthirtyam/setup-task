@@ -19,15 +19,15 @@ describe('Task Installer', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
-    
+
     mockOptions = {
       version: '3.43.1',
-      skipCache: true,
+      skipCache: true
     };
-    
+
     Object.defineProperty(process, 'platform', { value: 'linux' });
     Object.defineProperty(process, 'arch', { value: 'x64' });
-    
+
     (toolCache.downloadTool as jest.Mock).mockResolvedValue('/tmp/downloaded-task.tar.gz');
     (toolCache.extractTar as jest.Mock).mockResolvedValue('/tmp/extracted-task');
     (toolCache.extractZip as jest.Mock).mockResolvedValue('/tmp/extracted-task');
@@ -52,7 +52,9 @@ describe('Task Installer', () => {
 
     try {
       const result = await installTask(mockOptions);
-      expect(toolCache.downloadTool).toHaveBeenCalledWith(expect.stringContaining('task_linux_amd64.tar.gz'));
+      expect(toolCache.downloadTool).toHaveBeenCalledWith(
+        expect.stringContaining('task_linux_amd64.tar.gz')
+      );
       expect(toolCache.extractTar).toHaveBeenCalledWith('/tmp/downloaded-task.tar.gz');
       expect(result).toContain('task');
     } finally {
