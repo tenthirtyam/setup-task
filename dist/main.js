@@ -120,7 +120,7 @@ function getTaskOptions() {
             }
         }
         catch (error) {
-            throw new Error(`Failed to read version from file ${versionFromFile}: ${error instanceof Error ? error.message : String(error)}`);
+            throw new Error(`Failed to read version from file ${versionFromFile}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
         }
     }
     else if (versionInput) {
@@ -236,7 +236,7 @@ async function verifyInstallation() {
     catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
         logger.error(`Task verification error: ${errorMessage}`);
-        throw new Error(`Task verification failed: ${errorMessage}`);
+        throw new Error(`Task verification failed: ${errorMessage}`, { cause: error });
     }
 }
 // Run the action and handle errors.
@@ -282,7 +282,10 @@ function processEnvVars(inputValue) {
             }
         }
         // Parse as key-value pairs.
-        const lines = inputValue.split('\n').map(line => line.trim()).filter(Boolean);
+        const lines = inputValue
+            .split('\n')
+            .map(line => line.trim())
+            .filter(Boolean);
         for (const line of lines) {
             const match = line.match(/^([^=]+)=(.*)$/);
             if (match) {

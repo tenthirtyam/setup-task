@@ -72,21 +72,27 @@ export function setupHttpMocks(
   mockResponse: MockResponse
 ): void {
   // Setup https.get and https.request mocks
-  https.get.mockImplementation((url: string | URL | object, options?: object, callback?: Function): MockRequest => {
-    if (callback) callback(mockResponse);
-    return mockRequest;
-  });
+  https.get.mockImplementation(
+    (url: string | URL | object, options?: object, callback?: Function): MockRequest => {
+      if (callback) callback(mockResponse);
+      return mockRequest;
+    }
+  );
 
-  https.request.mockImplementation((url: string | URL | object, options?: object, callback?: Function): MockRequest => {
-    if (callback) callback(mockResponse);
-    return mockRequest;
-  });
+  https.request.mockImplementation(
+    (url: string | URL | object, options?: object, callback?: Function): MockRequest => {
+      if (callback) callback(mockResponse);
+      return mockRequest;
+    }
+  );
 
   // Also mock http module for proxy support
-  http.request.mockImplementation((url: string | URL | object, options?: object, callback?: Function): MockRequest => {
-    if (callback) callback(mockResponse);
-    return mockRequest;
-  });
+  http.request.mockImplementation(
+    (url: string | URL | object, options?: object, callback?: Function): MockRequest => {
+      if (callback) callback(mockResponse);
+      return mockRequest;
+    }
+  );
 }
 
 /**

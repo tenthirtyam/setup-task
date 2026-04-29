@@ -93,7 +93,7 @@ describe('cache', () => {
       (actionsCache.restoreCache as jest.Mock).mockResolvedValue(mockCacheDir);
 
       // Mock executable not found.
-      (fs.existsSync as jest.Mock).mockImplementation((p) => {
+      (fs.existsSync as jest.Mock).mockImplementation(p => {
         if (p.includes('task')) return false;
         return true;
       });
@@ -114,7 +114,9 @@ describe('cache', () => {
       const result = await cache.restoreCache(mockVersion);
 
       // Verify warning logged.
-      expect(core.warning).toHaveBeenCalledWith(expect.stringContaining('Failed to restore from cache'));
+      expect(core.warning).toHaveBeenCalledWith(
+        expect.stringContaining('Failed to restore from cache')
+      );
 
       // Verify empty result on error.
       expect(result).toBe('');
@@ -168,7 +170,9 @@ describe('cache', () => {
       await cache.saveCache(mockTaskPath, mockVersion);
 
       // Verify warning logged.
-      expect(core.warning).toHaveBeenCalledWith(expect.stringContaining('Failed to save Task to cache'));
+      expect(core.warning).toHaveBeenCalledWith(
+        expect.stringContaining('Failed to save Task to cache')
+      );
     });
   });
 });

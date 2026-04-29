@@ -48,6 +48,5 @@ module.exports = {
   ],
 
   // Setup for Node.js compatibility with @actions packages.
-  setupFiles: ['<rootDir>/jest.setup.js'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
 };

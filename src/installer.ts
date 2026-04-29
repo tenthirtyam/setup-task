@@ -12,12 +12,7 @@ import * as toolCache from '@actions/tool-cache';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs';
-import {
-  RELEASES_URL,
-  OS_MAPPING,
-  ARCH_MAPPING,
-  EXE_EXTENSION
-} from './constants';
+import { RELEASES_URL, OS_MAPPING, ARCH_MAPPING, EXE_EXTENSION } from './constants';
 import { fetchLatestRelease, logAndFail } from './utils';
 import { TaskOptions } from './types';
 
@@ -47,21 +42,25 @@ export async function installTask(options: TaskOptions): Promise<string> {
   try {
     const { version: requestedVersion } = options;
 
-    const version: string = requestedVersion === 'latest'
-      ? await (async (): Promise<string> => {
-          core.info('Retrieving latest version of Task...');
-          try {
-            const latestVersion: string = await fetchLatestRelease(options.githubToken);
-            core.info(`Retrieved the latest version: ${latestVersion}`);
-            return latestVersion;
-          } catch (error: unknown) {
-            const errorMessage = error instanceof Error ? error.message : String(error);
-            // If the version cannot be retrieved, log the error and throw an error to stop the action.
-            core.error(`Failed to retrieve the latest version: ${errorMessage}`);
-            throw new Error(`Unable to retrieve the latest version. Please specify a specific version instead of 'latest'.`);
-          }
-        })()
-      : requestedVersion;
+    const version: string =
+      requestedVersion === 'latest'
+        ? await (async (): Promise<string> => {
+            core.info('Retrieving latest version of Task...');
+            try {
+              const latestVersion: string = await fetchLatestRelease(options.githubToken);
+              core.info(`Retrieved the latest version: ${latestVersion}`);
+              return latestVersion;
+            } catch (error: unknown) {
+              const errorMessage = error instanceof Error ? error.message : String(error);
+              // If the version cannot be retrieved, log the error and throw an error to stop the action.
+              core.error(`Failed to retrieve the latest version: ${errorMessage}`);
+              throw new Error(
+                `Unable to retrieve the latest version. Please specify a specific version instead of 'latest'.`,
+                { cause: error }
+              );
+            }
+          })()
+        : requestedVersion;
 
     const downloadUrl: string = getDownloadUrl(version);
     core.info(`Preparing to download Task from URL: ${downloadUrl}`);
@@ -80,7 +79,7 @@ export async function installTask(options: TaskOptions): Promise<string> {
         throw new Error(`Unsupported archive format encountered: ${downloadUrl}`);
       } catch (error: unknown) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        throw new Error(`Extraction failed. Error: ${errorMessage}`);
+        throw new Error(`Extraction failed. Error: ${errorMessage}`, { cause: error });
       }
     })();
 
