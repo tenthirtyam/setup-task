@@ -34,7 +34,6 @@ terms and conditions of the component's license.
 | [`@azure/core-util`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/core-xml`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/logger`](https://github.com/Azure/azure-sdk-for-js) | MIT |
-| [`@azure/ms-rest-js`](https://github.com/Azure/ms-rest-js) | MIT |
 | [`@azure/storage-blob`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@azure/storage-common`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@babel/code-frame`](https://github.com/babel/babel) | MIT |
@@ -145,7 +144,6 @@ terms and conditions of the component's license.
 | [`@typespec/ts-http-runtime`](https://github.com/Azure/azure-sdk-for-js) | MIT |
 | [`@ungap/structured-clone`](https://github.com/ungap/structured-clone) | ISC |
 | [`@unrs/resolver-binding-darwin-arm64`](https://github.com/unrs/unrs-resolver) | MIT |
-| [`abort-controller`](https://github.com/mysticatea/abort-controller) | MIT |
 | [`acorn-jsx`](https://github.com/acornjs/acorn-jsx) | MIT |
 | [`acorn`](https://github.com/acornjs/acorn) | MIT |
 | [`agent-base`](https://github.com/TooTallNate/proxy-agents) | MIT |
@@ -155,7 +153,6 @@ terms and conditions of the component's license.
 | [`ansi-styles`](https://github.com/chalk/ansi-styles) | MIT |
 | [`anymatch`](https://github.com/micromatch/anymatch) | ISC |
 | [`argparse`](https://github.com/nodeca/argparse) | MIT |
-| [`asynckit`](https://github.com/alexindigo/asynckit) | MIT |
 | [`babel-jest`](https://github.com/jestjs/jest) | MIT |
 | [`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) | BSD-3-Clause |
 | [`babel-plugin-jest-hoist`](https://github.com/jestjs/jest) | MIT |
@@ -168,7 +165,6 @@ terms and conditions of the component's license.
 | [`bs-logger`](https://github.com/huafu/bs-logger) | MIT |
 | [`bser`](https://github.com/facebook/watchman) | Apache-2.0 |
 | [`buffer-from`](https://github.com/LinusU/buffer-from) | MIT |
-| [`call-bind-apply-helpers`](https://github.com/ljharb/call-bind-apply-helpers) | MIT |
 | [`callsites`](https://github.com/sindresorhus/callsites) | MIT |
 | [`camelcase`](https://github.com/sindresorhus/camelcase) | MIT |
 | [`caniuse-lite`](https://github.com/browserslist/caniuse-lite) | CC-BY-4.0 |
@@ -181,7 +177,6 @@ terms and conditions of the component's license.
 | [`collect-v8-coverage`](https://github.com/SimenB/collect-v8-coverage) | MIT |
 | [`color-convert`](https://github.com/Qix-/color-convert) | MIT |
 | [`color-name`](https://github.com/colorjs/color-name) | MIT |
-| [`combined-stream`](https://github.com/felixge/node-combined-stream) | MIT |
 | [`concat-map`](https://github.com/substack/node-concat-map) | MIT |
 | [`convert-source-map`](https://github.com/thlorenz/convert-source-map) | MIT |
 | [`cross-fetch`](https://github.com/lquixada/cross-fetch) | MIT |
@@ -190,17 +185,11 @@ terms and conditions of the component's license.
 | [`dedent`](https://github.com/dmnd/dedent) | MIT |
 | [`deep-is`](https://github.com/thlorenz/deep-is) | MIT |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | MIT |
-| [`delayed-stream`](https://github.com/felixge/node-delayed-stream) | MIT |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
-| [`dunder-proto`](https://github.com/es-shims/dunder-proto) | MIT |
 | [`electron-to-chromium`](https://github.com/kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
 | [`error-ex`](https://github.com/qix-/node-error-ex) | MIT |
-| [`es-define-property`](https://github.com/ljharb/es-define-property) | MIT |
-| [`es-errors`](https://github.com/ljharb/es-errors) | MIT |
-| [`es-object-atoms`](https://github.com/ljharb/es-object-atoms) | MIT |
-| [`es-set-tostringtag`](https://github.com/es-shims/es-set-tostringtag) | MIT |
 | [`escalade`](https://github.com/lukeed/escalade) | MIT |
 | [`escape-string-regexp`](https://github.com/sindresorhus/escape-string-regexp) | MIT |
 | [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest) | MIT |
@@ -213,7 +202,6 @@ terms and conditions of the component's license.
 | [`esrecurse`](https://github.com/estools/esrecurse) | BSD-2-Clause |
 | [`estraverse`](https://github.com/estools/estraverse) | BSD-2-Clause |
 | [`esutils`](https://github.com/estools/esutils) | BSD-2-Clause |
-| [`event-target-shim`](https://github.com/mysticatea/event-target-shim) | MIT |
 | [`events`](https://github.com/Gozala/events) | MIT |
 | [`execa`](https://github.com/sindresorhus/execa) | MIT |
 | [`exit-x`](https://github.com/gruntjs/node-exit-x) | MIT |
@@ -230,25 +218,17 @@ terms and conditions of the component's license.
 | [`flat-cache`](https://github.com/jaredwray/flat-cache) | MIT |
 | [`flatted`](https://github.com/WebReflection/flatted) | ISC |
 | [`foreground-child`](https://github.com/tapjs/foreground-child) | ISC |
-| [`form-data`](https://github.com/form-data/form-data) | MIT |
 | [`fsevents`](https://github.com/fsevents/fsevents) | MIT |
-| [`function-bind`](https://github.com/Raynos/function-bind) | MIT |
 | [`gensync`](https://github.com/loganfsmyth/gensync) | MIT |
 | [`get-caller-file`](https://github.com/stefanpenner/get-caller-file) | ISC |
-| [`get-intrinsic`](https://github.com/ljharb/get-intrinsic) | MIT |
 | [`get-package-type`](https://github.com/cfware/get-package-type) | MIT |
-| [`get-proto`](https://github.com/ljharb/get-proto) | MIT |
 | [`get-stream`](https://github.com/sindresorhus/get-stream) | MIT |
 | [`glob-parent`](https://github.com/gulpjs/glob-parent) | ISC |
 | [`glob`](https://github.com/isaacs/node-glob) | BlueOak-1.0.0 |
 | [`globals`](https://github.com/sindresorhus/globals) | MIT |
-| [`gopd`](https://github.com/ljharb/gopd) | MIT |
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | ISC |
 | [`handlebars`](https://github.com/handlebars-lang/handlebars.js) | MIT |
 | [`has-flag`](https://github.com/sindresorhus/has-flag) | MIT |
-| [`has-symbols`](https://github.com/inspect-js/has-symbols) | MIT |
-| [`has-tostringtag`](https://github.com/inspect-js/has-tostringtag) | MIT |
-| [`hasown`](https://github.com/inspect-js/hasOwn) | MIT |
 | [`html-escaper`](https://github.com/WebReflection/html-escaper) | MIT |
 | [`http-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | MIT |
 | [`https-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | MIT |
@@ -313,10 +293,7 @@ terms and conditions of the component's license.
 | [`make-dir`](https://github.com/sindresorhus/make-dir) | MIT |
 | [`make-error`](https://github.com/JsCommunity/make-error) | ISC |
 | [`makeerror`](https://github.com/daaku/nodejs-makeerror) | BSD-3-Clause |
-| [`math-intrinsics`](https://github.com/es-shims/math-intrinsics) | MIT |
 | [`merge-stream`](https://github.com/grncdr/merge-stream) | MIT |
-| [`mime-db`](https://github.com/jshttp/mime-db) | MIT |
-| [`mime-types`](https://github.com/jshttp/mime-types) | MIT |
 | [`mimic-fn`](https://github.com/sindresorhus/mimic-fn) | MIT |
 | [`minimatch`](https://github.com/isaacs/minimatch) | BlueOak-1.0.0 |
 | [`minimist`](https://github.com/minimistjs/minimist) | MIT |
@@ -355,7 +332,6 @@ terms and conditions of the component's license.
 | [`require-directory`](https://github.com/troygoode/node-require-directory) | MIT |
 | [`resolve-cwd`](https://github.com/sindresorhus/resolve-cwd) | MIT |
 | [`resolve-from`](https://github.com/sindresorhus/resolve-from) | MIT |
-| [`sax`](https://github.com/isaacs/sax-js) | BlueOak-1.0.0 |
 | [`semver`](https://github.com/npm/node-semver) | ISC |
 | [`setup-task-action`](#) | MIT |
 | [`shebang-command`](https://github.com/kevva/shebang-command) | MIT |
@@ -393,7 +369,6 @@ terms and conditions of the component's license.
 | [`unrs-resolver`](https://github.com/unrs/unrs-resolver) | MIT |
 | [`update-browserslist-db`](https://github.com/browserslist/update-db) | MIT |
 | [`uri-js`](https://github.com/garycourt/uri-js) | BSD-2-Clause |
-| [`uuid`](https://github.com/uuidjs/uuid) | MIT |
 | [`v8-to-istanbul`](https://github.com/istanbuljs/v8-to-istanbul) | ISC |
 | [`walker`](https://github.com/daaku/nodejs-walker) | Apache-2.0 |
 | [`webidl-conversions`](https://github.com/jsdom/webidl-conversions) | BSD-2-Clause |
@@ -403,8 +378,6 @@ terms and conditions of the component's license.
 | [`wordwrap`](https://github.com/substack/node-wordwrap) | MIT |
 | [`wrap-ansi`](https://github.com/chalk/wrap-ansi) | MIT |
 | [`write-file-atomic`](https://github.com/npm/write-file-atomic) | ISC |
-| [`xml2js`](https://github.com/Leonidas-from-XIV/node-xml2js) | MIT |
-| [`xmlbuilder`](https://github.com/oozcitak/xmlbuilder-js) | MIT |
 | [`y18n`](https://github.com/yargs/y18n) | ISC |
 | [`yallist`](https://github.com/isaacs/yallist) | ISC |
 | [`yargs-parser`](https://github.com/yargs/yargs-parser) | ISC |
