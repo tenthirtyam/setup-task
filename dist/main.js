@@ -1,4 +1,3 @@
-"use strict";
 /**
  * @license
  * SPDX-License-Identifier: MIT
@@ -7,50 +6,13 @@
  *
  * Entry point for the GitHub Action.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.processEnvVars = processEnvVars;
-exports.getTaskOptions = getTaskOptions;
-exports.isTaskInstalled = isTaskInstalled;
-const core = __importStar(require("@actions/core"));
-const exec = __importStar(require("@actions/exec"));
-const path = __importStar(require("path"));
-const fs = __importStar(require("fs"));
-const yaml = __importStar(require("js-yaml"));
-const installer_1 = require("./installer");
-const cache_1 = require("./cache");
+import * as core from '@actions/core';
+import * as exec from '@actions/exec';
+import * as path from 'path';
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+import { installTask } from './installer';
+import { restoreCache, saveCache } from './cache';
 const isVerbose = core.getInput('verbose') === 'true';
 const logger = {
     debug: (message) => {
@@ -170,16 +132,16 @@ async function run() {
             taskPath = await (async () => {
                 // Restore from cache, if not skipped.
                 if (!options.skipCache) {
-                    const cachedPath = await (0, cache_1.restoreCache)(options.version);
+                    const cachedPath = await restoreCache(options.version);
                     if (cachedPath) {
                         return cachedPath;
                     }
                 }
                 // Install if not found in cache.
-                const installedPath = await (0, installer_1.installTask)(options);
+                const installedPath = await installTask(options);
                 // Save to cache, if not skipped.
                 if (!options.skipCache) {
-                    await (0, cache_1.saveCache)(installedPath, options.version);
+                    await saveCache(installedPath, options.version);
                 }
                 return installedPath;
             })();
@@ -248,7 +210,7 @@ void run().catch(error => {
  * @param inputValue The environment variables input value
  * @returns true if processing succeeded, false otherwise
  */
-function processEnvVars(inputValue) {
+export function processEnvVars(inputValue) {
     if (!inputValue || !inputValue.trim()) {
         return false;
     }
@@ -312,3 +274,4 @@ function processEnvVars(inputValue) {
         return false;
     }
 }
+export { getTaskOptions, isTaskInstalled };
