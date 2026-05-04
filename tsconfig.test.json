@@ -2,6 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
+    "module": "CommonJS",
+    "moduleResolution": "Node16",
+    "ignoreDeprecations": "6.0",
     "types": ["jest", "node"],
     "isolatedModules": true
   },

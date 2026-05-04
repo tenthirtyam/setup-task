@@ -1,4 +1,3 @@
-"use strict";
 /**
  * @license
  * SPDX-License-Identifier: MIT
@@ -7,48 +6,13 @@
  *
  * Installer for the Task CLI tool.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.installTask = installTask;
-const core = __importStar(require("@actions/core"));
-const toolCache = __importStar(require("@actions/tool-cache"));
-const os = __importStar(require("os"));
-const path = __importStar(require("path"));
-const fs = __importStar(require("fs"));
-const constants_1 = require("./constants");
-const utils_1 = require("./utils");
+import * as core from '@actions/core';
+import * as toolCache from '@actions/tool-cache';
+import * as os from 'os';
+import * as path from 'path';
+import * as fs from 'fs';
+import { RELEASES_URL, OS_MAPPING, ARCH_MAPPING, EXE_EXTENSION } from './constants';
+import { fetchLatestRelease, logAndFail } from './utils';
 // Set up required GitHub Actions environment variables if they don't exist
 if (!process.env.RUNNER_TEMP) {
     process.env.RUNNER_TEMP = os.tmpdir();
@@ -67,7 +31,7 @@ if (!process.env.RUNNER_TOOL_CACHE) {
  * @param options - Options for the installation
  * @returns Path to the installed Task
  */
-async function installTask(options) {
+export async function installTask(options) {
     core.info('Starting Task installation process...');
     try {
         const { version: requestedVersion } = options;
@@ -75,7 +39,7 @@ async function installTask(options) {
             ? await (async () => {
                 core.info('Retrieving latest version of Task...');
                 try {
-                    const latestVersion = await (0, utils_1.fetchLatestRelease)(options.githubToken);
+                    const latestVersion = await fetchLatestRelease(options.githubToken);
                     core.info(`Retrieved the latest version: ${latestVersion}`);
                     return latestVersion;
                 }
@@ -121,7 +85,7 @@ async function installTask(options) {
     catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
         core.error(`Task installation failed. Error: ${errorMessage}`);
-        (0, utils_1.logAndFail)(`Installation process terminated. Error: ${errorMessage}`);
+        logAndFail(`Installation process terminated. Error: ${errorMessage}`);
         throw error;
     }
 }
@@ -134,7 +98,7 @@ function getDownloadUrl(version) {
     const platform = getPlatform();
     const arch = getArchitecture();
     const extension = process.platform === 'win32' ? 'zip' : 'tar.gz';
-    return `${constants_1.RELEASES_URL}/v${version}/task_${platform}_${arch}.${extension}`;
+    return `${RELEASES_URL}/v${version}/task_${platform}_${arch}.${extension}`;
 }
 /**
  * Map the current platform to Task platform identifier
@@ -142,9 +106,9 @@ function getDownloadUrl(version) {
  */
 function getPlatform() {
     const platform = process.platform;
-    const mappedPlatform = constants_1.OS_MAPPING[platform];
+    const mappedPlatform = OS_MAPPING[platform];
     if (!mappedPlatform) {
-        (0, utils_1.logAndFail)(`Unsupported platform: ${platform}`);
+        logAndFail(`Unsupported platform: ${platform}`);
         throw new Error(); // Will never reach here, but TypeScript needs it
     }
     return mappedPlatform;
@@ -155,9 +119,9 @@ function getPlatform() {
  */
 function getArchitecture() {
     const arch = process.arch;
-    const mappedArch = constants_1.ARCH_MAPPING[arch];
+    const mappedArch = ARCH_MAPPING[arch];
     if (!mappedArch) {
-        (0, utils_1.logAndFail)(`Unsupported architecture: ${arch}`);
+        logAndFail(`Unsupported architecture: ${arch}`);
         throw new Error(); // Will never reach here, but TypeScript needs it
     }
     return mappedArch;
@@ -168,7 +132,7 @@ function getArchitecture() {
  * @returns Path to the executable
  */
 function findExecutable(extractedPath) {
-    const executableName = `task${constants_1.EXE_EXTENSION}`;
+    const executableName = `task${EXE_EXTENSION}`;
     core.debug(`Searching for executable: ${executableName} in directory: ${extractedPath}`);
     const checkDirectory = (dirPath) => {
         const execPath = path.join(dirPath, executableName);

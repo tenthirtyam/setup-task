@@ -1,4 +1,3 @@
-"use strict";
 /**
  * @license
  * SPDX-License-Identifier: MIT
@@ -7,64 +6,24 @@
  *
  * Utility functions for the GitHub Action.
  */
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCacheDirectory = getCacheDirectory;
-exports.getExecutableDirectoryPath = getExecutableDirectoryPath;
-exports.copyDirRecursive = copyDirRecursive;
-exports.fetchLatestRelease = fetchLatestRelease;
-exports.parseMultilineInput = parseMultilineInput;
-exports.logAndFail = logAndFail;
-const core = __importStar(require("@actions/core"));
-const os = __importStar(require("os"));
-const path = __importStar(require("path"));
-const fs = __importStar(require("fs"));
-const constants_1 = require("./constants");
+import * as core from '@actions/core';
+import * as os from 'os';
+import * as path from 'path';
+import * as fs from 'fs';
+import { RELEASES_API_URL, CACHE_DIR } from './constants';
 /**
  * Get the cache directory for Task
  * @returns Path to cache directory
  */
-function getCacheDirectory() {
-    return path.join(os.tmpdir(), constants_1.CACHE_DIR);
+export function getCacheDirectory() {
+    return path.join(os.tmpdir(), CACHE_DIR);
 }
 /**
  * Get the directory path containing the Task executable.
  * @param taskPath Path to Task installation
  * @returns Directory containing the Task executable
  */
-function getExecutableDirectoryPath(taskPath) {
+export function getExecutableDirectoryPath(taskPath) {
     return path.dirname(taskPath);
 }
 /**
@@ -73,7 +32,7 @@ function getExecutableDirectoryPath(taskPath) {
  * @param dest Destination directory
  * @throws Error if source directory does not exist
  */
-async function copyDirRecursive(src, dest) {
+export async function copyDirRecursive(src, dest) {
     // Validate source exists.
     if (!fs.existsSync(src)) {
         throw new Error(`Source directory does not exist: ${src}`);
@@ -138,9 +97,9 @@ function cleanVersionFromTag(tagName) {
  * @param githubToken Optional GitHub token for authentication
  * @returns Latest version string
  */
-async function fetchLatestRelease(githubToken) {
+export async function fetchLatestRelease(githubToken) {
     try {
-        const endpoint = `${constants_1.RELEASES_API_URL}/latest`;
+        const endpoint = `${RELEASES_API_URL}/latest`;
         const headers = {};
         if (githubToken) {
             headers['Authorization'] = `Bearer ${githubToken}`;
@@ -157,7 +116,7 @@ async function fetchLatestRelease(githubToken) {
         return cleanVersionFromTag(data.tag_name);
     }
     catch (error) {
-        throw new Error(`Failed to fetch release information from ${constants_1.RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
+        throw new Error(`Failed to fetch release information from ${RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
     }
 }
 /**
@@ -165,7 +124,7 @@ async function fetchLatestRelease(githubToken) {
  * @param input The multiline input string
  * @returns Array of trimmed non-empty lines
  */
-function parseMultilineInput(input) {
+export function parseMultilineInput(input) {
     if (!input) {
         return [];
     }
@@ -178,7 +137,7 @@ function parseMultilineInput(input) {
  * Validates and logs errors for requirements
  * @param message Error message to display
  */
-function logAndFail(message) {
+export function logAndFail(message) {
     core.setFailed(message);
     throw new Error(message);
 }
