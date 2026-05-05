@@ -78,7 +78,7 @@ Refer to the `examples/` folder for usage scenarios.
 
 ## License
 
-Copyright &copy; 2025 Ryan Johnson
+Copyright &copy; 2025-2026 Ryan Johnson
 
 Licensed under the [MIT License][license].
 

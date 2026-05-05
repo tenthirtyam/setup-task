@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Utility functions for the GitHub Action.
  */
