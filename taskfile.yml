@@ -9,7 +9,12 @@ vars:
   NODE_MEM: 4096
 
 tasks:
-  # Core tasks.
+  default:
+    desc: Show Tasks
+    cmds:
+      - task --list
+    silent: true
+
   clean:
     desc: Clean build artifacts.
     cmds:
