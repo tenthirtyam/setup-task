@@ -49628,7 +49628,7 @@ function _unique(values) {
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Constants for the GitHub Action.
  */
@@ -49658,7 +49658,7 @@ const RELEASES_URL = 'https://github.com/go-task/task/releases/download';
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Utility functions for the GitHub Action.
  */
@@ -49803,7 +49803,7 @@ function logAndFail(message) {
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Installer for the Task CLI tool.
  */
@@ -96435,7 +96435,7 @@ function saveCacheV2(paths_1, key_1, options_1) {
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Cache management for GitHub Action.
  */
@@ -96528,7 +96528,7 @@ async function dist_cache_saveCache(taskPath, version) {
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Entry point for the GitHub Action.
  */
@@ -96807,7 +96807,7 @@ function processEnvVars(inputValue) {
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Entry point for the GitHub Action.
  */

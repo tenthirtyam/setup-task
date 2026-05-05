@@ -1,4 +1,4 @@
-# Copyright (c) 2025 Ryan Johnson
+# Copyright (c) 2025-2026 Ryan Johnson
 # SPDX-License-Identifier: MIT
 
 # Taskfile for running development tasks, tests, linting, and build operations.
@@ -135,7 +135,7 @@ tasks:
       - echo "==> Checking for unused dependencies..."
       - npx depcheck || true
       - echo "==> Run 'task update:dependencies' to update packages"
-  
+
   update:dependencies:
     desc: Update all dependencies to their latest versions.
     cmds:
@@ -149,7 +149,7 @@ tasks:
       - echo "==> Running tests to verify updates..."
       - npm test || { echo "Tests failed after update, consider reverting with 'task update:dependencies:revert'"; exit 1; }
       - echo "==> Dependencies updated successfully!"
-  
+
   update:dependencies:revert:
     desc: Revert to backup package files if update fails.
     cmds:

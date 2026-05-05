@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  *
  * Jest configuration optimized for memory usage and performance.
  */

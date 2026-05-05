@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: MIT
  *
- * Copyright (c) 2025 Ryan Johnson
+ * Copyright (c) 2025-2026 Ryan Johnson
  */
 
 /* eslint-env node */
@@ -53,7 +53,7 @@ function generateTableHeader() {
 // Generate the table rows.
 function generateTableRows(licensesData) {
   const uniquePackages = new Map();
-  
+
   Object.entries(licensesData).forEach(([packageName, details]) => {
     let normalizedName;
     if (packageName.startsWith('@')) {
