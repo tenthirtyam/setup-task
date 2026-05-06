@@ -43,7 +43,7 @@ tasks:
     desc: Format code.
     cmds:
       - echo "==> Formatting code..."
-      - npx prettier --write 'src/**/*.ts' '__tests__/**/*.ts'
+      - npx prettier --write .
 
   # Testing tasks.
   test:
@@ -129,6 +129,7 @@ tasks:
       - task: lint
       - task: test:components
       - task: generate-notice
+      - task: format
       - git add dist
       - echo "==> Ready for release!"
 

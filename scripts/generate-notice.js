@@ -91,7 +91,7 @@ function generateNoticeFile() {
   const noticeContent = [
     generateIntroText(),
     generateTableHeader(),
-    generateTableRows(licensesData),
+    generateTableRows(licensesData)
   ].join('');
 
   writeToFile(noticeFilePath, noticeContent);

@@ -3,54 +3,54 @@ version: 2
 
 updates:
   # GitHub Actions updates.
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
+  - package-ecosystem: 'github-actions'
+    directory: '/.github/workflows'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     commit-message:
-      prefix: "chore(gh):"
-      include: "scope"
+      prefix: 'chore(gh):'
+      include: 'scope'
     labels:
-      - "chore"
-      - "github-actions"
+      - 'chore'
+      - 'github-actions'
     groups:
       github-actions:
         patterns:
-          - "*"
+          - '*'
 
   # Node.js dependencies updates.
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     commit-message:
-      prefix: "chore(deps):"
-      include: "scope"
+      prefix: 'chore(deps):'
+      include: 'scope'
     labels:
-      - "chore"
-      - "dependencies"
+      - 'chore'
+      - 'dependencies'
     groups:
       development-dependencies:
-        dependency-type: "development"
+        dependency-type: 'development'
       production-dependencies:
-        dependency-type: "production"
+        dependency-type: 'production'
     ignore:
-      - dependency-name: "*"
+      - dependency-name: '*'
         update-types:
-          - "version-update:semver-major"
+          - 'version-update:semver-major'
 
   # Docker image updates.
-  - package-ecosystem: "docker"
-    directory: "/"
+  - package-ecosystem: 'docker'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     commit-message:
-      prefix: "chore(docker):"
-      include: "scope"
+      prefix: 'chore(docker):'
+      include: 'scope'
     labels:
-      - "chore"
-      - "docker"
+      - 'chore'
+      - 'docker'
     groups:
       docker-updates:
         patterns:
-          - "*"
+          - '*'

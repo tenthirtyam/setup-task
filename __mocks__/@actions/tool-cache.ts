@@ -10,4 +10,3 @@
 export const downloadTool = jest.fn();
 export const extractTar = jest.fn();
 export const extractZip = jest.fn();
-

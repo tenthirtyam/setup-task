@@ -44,7 +44,7 @@ module.exports = [
     files: ['__tests__/**/*.ts'],
     plugins: {
       '@typescript-eslint': tseslint,
-      'jest': jestPlugin
+      jest: jestPlugin
     },
     languageOptions: {
       ecmaVersion: 2022,

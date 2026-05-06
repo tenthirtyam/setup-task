@@ -3,9 +3,9 @@ name: Version from File Example
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   setup-task:
@@ -43,7 +43,7 @@ jobs:
         run: |
           cat > Taskfile.yml <<EOF
           version: "3"
-          
+
           tasks:
             default:
               desc: Reads version from file.
