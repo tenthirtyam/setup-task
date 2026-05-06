@@ -1,0 +1,9 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+coverage/
+
+# Generated files
+.licenses/
+NOTICE.md
+package-lock.json
