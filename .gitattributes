@@ -1,0 +1,11 @@
+# Default.
+*           text=auto eol=lf
+
+# Normalize to LF.
+*.js        text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.ts        text eol=lf
+*.yml       text eol=lf
+CODEOWNERS  text eol=lf
+LICENSE     text eol=lf
