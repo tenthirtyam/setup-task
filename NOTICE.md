@@ -112,7 +112,7 @@ terms and conditions of the component's license.
 | [`@pkgr/core`](https://github.com/un-ts/pkgr) | MIT |
 | [`@protobuf-ts/runtime-rpc`](https://github.com/timostamm/protobuf-ts) | Apache-2.0 |
 | [`@protobuf-ts/runtime`](https://github.com/timostamm/protobuf-ts) | (Apache-2.0 AND BSD-3-Clause) |
-| [`@sinclair/typebox`](https://github.com/sinclairzx81/typebox-legacy) | MIT |
+| [`@sinclair/typebox`](https://github.com/sinclairzx81/sinclair-typebox) | MIT |
 | [`@sinonjs/commons`](https://github.com/sinonjs/commons) | BSD-3-Clause |
 | [`@sinonjs/fake-timers`](https://github.com/sinonjs/fake-timers) | BSD-3-Clause |
 | [`@types/babel__core`](https://github.com/DefinitelyTyped/DefinitelyTyped) | MIT |
@@ -378,6 +378,7 @@ terms and conditions of the component's license.
 | [`wordwrap`](https://github.com/substack/node-wordwrap) | MIT |
 | [`wrap-ansi`](https://github.com/chalk/wrap-ansi) | MIT |
 | [`write-file-atomic`](https://github.com/npm/write-file-atomic) | ISC |
+| [`xml-naming`](https://github.com/NaturalIntelligence/xml-naming) | MIT |
 | [`y18n`](https://github.com/yargs/y18n) | ISC |
 | [`yallist`](https://github.com/isaacs/yallist) | ISC |
 | [`yargs-parser`](https://github.com/yargs/yargs-parser) | ISC |
