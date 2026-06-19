@@ -152,7 +152,7 @@ terms and conditions of the component's license.
 | [`ansi-regex`](https://github.com/chalk/ansi-regex) | MIT |
 | [`ansi-styles`](https://github.com/chalk/ansi-styles) | MIT |
 | [`anymatch`](https://github.com/micromatch/anymatch) | ISC |
-| [`argparse`](https://github.com/nodeca/argparse) | MIT |
+| [`argparse`](https://github.com/nodeca/argparse) | Python-2.0 |
 | [`babel-jest`](https://github.com/jestjs/jest) | MIT |
 | [`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) | BSD-3-Clause |
 | [`babel-plugin-jest-hoist`](https://github.com/jestjs/jest) | MIT |
@@ -186,7 +186,7 @@ terms and conditions of the component's license.
 | [`deep-is`](https://github.com/thlorenz/deep-is) | MIT |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | MIT |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
-| [`electron-to-chromium`](https://github.com/kilian/electron-to-chromium) | ISC |
+| [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
 | [`error-ex`](https://github.com/qix-/node-error-ex) | MIT |
@@ -197,7 +197,6 @@ terms and conditions of the component's license.
 | [`eslint-visitor-keys`](https://github.com/eslint/eslint-visitor-keys) | Apache-2.0 |
 | [`eslint`](https://github.com/eslint/eslint) | MIT |
 | [`espree`](https://github.com/eslint/js) | BSD-2-Clause |
-| [`esprima`](https://github.com/jquery/esprima) | BSD-2-Clause |
 | [`esquery`](https://github.com/estools/esquery) | BSD-3-Clause |
 | [`esrecurse`](https://github.com/estools/esrecurse) | BSD-2-Clause |
 | [`estraverse`](https://github.com/estools/estraverse) | BSD-2-Clause |
@@ -340,7 +339,6 @@ terms and conditions of the component's license.
 | [`slash`](https://github.com/sindresorhus/slash) | MIT |
 | [`source-map-support`](https://github.com/evanw/node-source-map-support) | MIT |
 | [`source-map`](https://github.com/mozilla/source-map) | BSD-3-Clause |
-| [`sprintf-js`](https://github.com/alexei/sprintf.js) | BSD-3-Clause |
 | [`stack-utils`](https://github.com/tapjs/stack-utils) | MIT |
 | [`string-length`](https://github.com/sindresorhus/string-length) | MIT |
 | [`string-width`](https://github.com/sindresorhus/string-width) | MIT |
