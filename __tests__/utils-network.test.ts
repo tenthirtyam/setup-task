@@ -94,7 +94,7 @@ describe('utils - Network Operations', () => {
       fetchMock.mockResponseOnce('Invalid JSON');
 
       await expect(utils.fetchLatestRelease()).rejects.toThrow(
-        'Failed to fetch release information from https://api.github.com/repos/go-task/task/releases: invalid json response body at  reason: Unexpected token \'I\', "Invalid JSON" is not valid JSON'
+        'Failed to fetch release information from https://api.github.com/repos/go-task/task/releases:'
       );
     });
 

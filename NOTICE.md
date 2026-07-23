@@ -186,7 +186,6 @@ terms and conditions of the component's license.
 | [`deep-is`](https://github.com/thlorenz/deep-is) | MIT |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | MIT |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
-| [`domexception`](https://github.com/jsdom/domexception) | MIT |
 | [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
