@@ -149,7 +149,7 @@ tasks:
       - cp package.json package.json.bak || true
       - cp package-lock.json package-lock.json.bak || true
       - echo "==> Updating dependencies to latest versions..."
-      - npx npm-check-updates -u
+      - npx npm-check-updates -u --peer
       - echo "==> Installing updated packages..."
       - npm install
       - echo "==> Running tests to verify updates..."
