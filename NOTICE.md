@@ -186,6 +186,7 @@ terms and conditions of the component's license.
 | [`deep-is`](https://github.com/thlorenz/deep-is) | MIT |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | MIT |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
+| [`domexception`](https://github.com/jsdom/domexception) | MIT |
 | [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
@@ -324,7 +325,6 @@ terms and conditions of the component's license.
 | [`prelude-ls`](https://github.com/gkz/prelude-ls) | MIT |
 | [`prettier`](https://github.com/prettier/prettier) | MIT |
 | [`pretty-format`](https://github.com/jestjs/jest) | MIT |
-| [`promise-polyfill`](https://github.com/taylorhakes/promise-polyfill) | MIT |
 | [`punycode`](https://github.com/mathiasbynens/punycode.js) | MIT |
 | [`pure-rand`](https://github.com/dubzzz/pure-rand) | MIT |
 | [`react-is`](https://github.com/facebook/react) | MIT |
