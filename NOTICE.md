@@ -177,7 +177,6 @@ terms and conditions of the component's license.
 | [`collect-v8-coverage`](https://github.com/SimenB/collect-v8-coverage) | MIT |
 | [`color-convert`](https://github.com/Qix-/color-convert) | MIT |
 | [`color-name`](https://github.com/colorjs/color-name) | MIT |
-| [`concat-map`](https://github.com/substack/node-concat-map) | MIT |
 | [`convert-source-map`](https://github.com/thlorenz/convert-source-map) | MIT |
 | [`cross-fetch`](https://github.com/lquixada/cross-fetch) | MIT |
 | [`cross-spawn`](https://github.com/moxystudio/node-cross-spawn) | MIT |
