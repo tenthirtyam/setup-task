@@ -1,8 +1,9 @@
+---
 blank_issues_enabled: false
 contact_links:
   - name: Discussions
-    url: https://github.com/tenthirtyam/setup-task/discussions
-    about: Need help with this GitHub Action? Ask a question in Discussions.
+    url: https://github.com/tenthirtyam/setup-task/discussions/new/choose
+    about: The starting point for questions, assistance, and discussions about this project.
   - name: Task Documentation
     url: https://taskfile.dev
     about: Need help with Task in general? Check out the Task documentation.
