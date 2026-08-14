@@ -60,7 +60,7 @@ tasks:
       JEST_OPTS: --runInBand --detectOpenHandles --forceExit
     cmds:
       - echo "==> Running unit tests..."
-      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/cache.test.ts __tests__/installer.test.ts __tests__/utils-basic.test.ts __tests__/utils-file.test.ts
+      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/cache.test.ts __tests__/installer.test.ts __tests__/utils-basic.test.ts
 
   test:components:
     desc: Run component tests.
@@ -73,8 +73,6 @@ tasks:
       - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/installer.test.ts
       - echo "==> Running basic utility tests..."
       - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-basic.test.ts
-      - echo "==> Running file operation tests..."
-      - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-file.test.ts
       - echo "==> Running network operation tests..."
       - node --expose-gc --max-old-space-size={{.NODE_MEM}} node_modules/.bin/jest {{.JEST_OPTS}} __tests__/utils-network.test.ts
 

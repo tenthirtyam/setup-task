@@ -48318,79 +48318,12 @@ const RELEASES_URL = 'https://github.com/go-task/task/releases/download';
 
 
 
-
 /**
  * Get the cache directory for Task
  * @returns Path to cache directory
  */
 function getCacheDirectory() {
     return external_path_namespaceObject.join(external_os_.tmpdir(), CACHE_DIR);
-}
-/**
- * Get the directory path containing the Task executable.
- * @param taskPath Path to Task installation
- * @returns Directory containing the Task executable
- */
-function getExecutableDirectoryPath(taskPath) {
-    return path.dirname(taskPath);
-}
-/**
- * Copy a directory recursively with improved handling of deep directories.
- * @param src Source directory
- * @param dest Destination directory
- * @throws Error if source directory does not exist
- */
-async function copyDirRecursive(src, dest) {
-    // Validate source exists.
-    if (!fs.existsSync(src)) {
-        throw new Error(`Source directory does not exist: ${src}`);
-    }
-    const srcStats = fs.statSync(src);
-    if (srcStats.isFile()) {
-        // Create destination directory, if required.
-        const destDir = path.dirname(dest);
-        if (!fs.existsSync(destDir)) {
-            fs.mkdirSync(destDir, { recursive: true });
-        }
-        // For single file copy, use the file name if the destination is a directory.
-        const fileName = path.basename(src);
-        const destPath = fs.existsSync(dest) && fs.statSync(dest).isDirectory() ? path.join(dest, fileName) : dest;
-        // Copy with original permissions.
-        fs.copyFileSync(src, destPath);
-        fs.chmodSync(destPath, srcStats.mode);
-        return;
-    }
-    // Create destination directory, if required.
-    if (!fs.existsSync(dest)) {
-        fs.mkdirSync(dest, { recursive: true });
-    }
-    // Use a queue-based approach to avoid stack overflow with deep directory structures.
-    const queue = [{ src, dest }];
-    // Process entries in breadth-first order.
-    while (queue.length > 0) {
-        const { src: currentSrc, dest: currentDest } = queue.shift();
-        // Read directory entries.
-        const entries = fs.readdirSync(currentSrc, { withFileTypes: true });
-        for (const entry of entries) {
-            const srcPath = path.join(currentSrc, entry.name);
-            const destPath = path.join(currentDest, entry.name);
-            if (entry.isDirectory()) {
-                // Create the destination directory.
-                if (!fs.existsSync(destPath)) {
-                    fs.mkdirSync(destPath, { recursive: true });
-                }
-                // Add to queue instead of recursive call.
-                queue.push({ src: srcPath, dest: destPath });
-            }
-            else {
-                // Copy file directly and preserve permissions.
-                fs.copyFileSync(srcPath, destPath);
-                // Copy permissions from source.
-                const stats = fs.statSync(srcPath);
-                fs.chmodSync(destPath, stats.mode);
-            }
-        }
-    }
 }
 /**
  * Extracts version from tag name by removing 'v' prefix if present
@@ -48426,20 +48359,6 @@ async function fetchLatestRelease(githubToken) {
     catch (error) {
         throw new Error(`Failed to fetch release information from ${RELEASES_API_URL}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
     }
-}
-/**
- * Parses a multiline input string into an array of strings
- * @param input The multiline input string
- * @returns Array of trimmed non-empty lines
- */
-function parseMultilineInput(input) {
-    if (!input) {
-        return [];
-    }
-    return input
-        .split('\n')
-        .map((s) => s.trim())
-        .filter((s) => s !== '');
 }
 /**
  * Validates and logs errors for requirements
