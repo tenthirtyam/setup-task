@@ -243,6 +243,19 @@ void run().catch(error => {
 });
 
 /**
+ * Export a single environment variable to the process and GitHub Actions.
+ */
+function exportEnvVar(key: string, value?: string): void {
+  const trimmedKey = key.trim();
+  const trimmedValue = value?.trim() || '';
+  process.env[trimmedKey] = trimmedValue;
+  logger.exportVariable(trimmedKey, trimmedValue);
+  if (isVerbose) {
+    logger.debug(`Exported environment variable: ${trimmedKey}=${trimmedValue}`);
+  }
+}
+
+/**
  * Process environment variables from input.
  * @param inputValue The environment variables input value
  * @returns true if processing succeeded, false otherwise
@@ -259,14 +272,7 @@ export function processEnvVars(inputValue: string): boolean {
       if (typeof envVars === 'object' && envVars !== null) {
         for (const [key, value] of Object.entries(envVars)) {
           if (key) {
-            const trimmedKey = key.trim();
-            const trimmedValue = value?.trim() || '';
-            process.env[trimmedKey] = trimmedValue;
-            // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
-            logger.exportVariable(trimmedKey, trimmedValue);
-            if (isVerbose) {
-              logger.debug(`Exported environment variable: ${trimmedKey}=${trimmedValue}`);
-            }
+            exportEnvVar(key, value);
           } else {
             logger.warning(`Invalid environment variable format: ${key}`);
           }
@@ -292,14 +298,7 @@ export function processEnvVars(inputValue: string): boolean {
       if (match) {
         const [, key, value] = match;
         if (key) {
-          const trimmedKey = key.trim();
-          const trimmedValue = value?.trim() || '';
-          process.env[trimmedKey] = trimmedValue;
-          // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
-          logger.exportVariable(trimmedKey, trimmedValue);
-          if (isVerbose) {
-            logger.debug(`Exported variable: ${trimmedKey}=${trimmedValue}`);
-          }
+          exportEnvVar(key, value);
         }
       } else {
         logger.warning(`Invalid variable format: ${line}`);
