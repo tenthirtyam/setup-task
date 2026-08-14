@@ -52,7 +52,6 @@ describe('cache', () => {
 
     // Mock utils
     (utils.getCacheDirectory as jest.Mock).mockReturnValue(mockCacheDir);
-    (utils.copyDirRecursive as jest.Mock).mockResolvedValue(undefined);
   });
 
   describe('restoreCache', () => {
