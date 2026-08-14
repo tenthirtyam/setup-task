@@ -98353,6 +98353,18 @@ void run().catch(error => {
     main_logger.setFailed(`Action failed: ${error instanceof Error ? error.message : String(error)}`);
 });
 /**
+ * Export a single environment variable to the process and GitHub Actions.
+ */
+function exportEnvVar(key, value) {
+    const trimmedKey = key.trim();
+    const trimmedValue = value?.trim() || '';
+    process.env[trimmedKey] = trimmedValue;
+    main_logger.exportVariable(trimmedKey, trimmedValue);
+    if (isVerbose) {
+        main_logger.debug(`Exported environment variable: ${trimmedKey}=${trimmedValue}`);
+    }
+}
+/**
  * Process environment variables from input.
  * @param inputValue The environment variables input value
  * @returns true if processing succeeded, false otherwise
@@ -98368,14 +98380,7 @@ function processEnvVars(inputValue) {
             if (typeof envVars === 'object' && envVars !== null) {
                 for (const [key, value] of Object.entries(envVars)) {
                     if (key) {
-                        const trimmedKey = key.trim();
-                        const trimmedValue = value?.trim() || '';
-                        process.env[trimmedKey] = trimmedValue;
-                        // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
-                        main_logger.exportVariable(trimmedKey, trimmedValue);
-                        if (isVerbose) {
-                            main_logger.debug(`Exported environment variable: ${trimmedKey}=${trimmedValue}`);
-                        }
+                        exportEnvVar(key, value);
                     }
                     else {
                         main_logger.warning(`Invalid environment variable format: ${key}`);
@@ -98400,14 +98405,7 @@ function processEnvVars(inputValue) {
             if (match) {
                 const [, key, value] = match;
                 if (key) {
-                    const trimmedKey = key.trim();
-                    const trimmedValue = value?.trim() || '';
-                    process.env[trimmedKey] = trimmedValue;
-                    // Export using GitHub Actions' exportVariable to ensure it's available to subsequent steps.
-                    main_logger.exportVariable(trimmedKey, trimmedValue);
-                    if (isVerbose) {
-                        main_logger.debug(`Exported variable: ${trimmedKey}=${trimmedValue}`);
-                    }
+                    exportEnvVar(key, value);
                 }
             }
             else {
