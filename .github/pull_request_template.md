@@ -67,11 +67,12 @@
 ### Issue References
 
 <!--
-    Is this related to any GitHub issue(s)? If so, please provide the issue
-    number(s) that are closed or resolved by this pull request.
+    Is this related to any GitHub discussion(s) or maintainer-created issue(s)?
+    If so, please provide the number(s) that are closed or resolved by this pull
+    request.
 
-    For bug fixes and enhancements/features, please ensure that a GitHub issue
-    has been created and provide the issue number(s) here.
+    For bug fixes and enhancements/features, reference the relevant discussion
+    and any maintainer-created issue for context.
 
     Please use the 'Closes', 'Resolves', or 'Fixes' keywords followed by the a
     hash and issue number. This will link the pull request to the issue(s) and

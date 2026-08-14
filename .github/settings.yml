@@ -1,6 +1,6 @@
 ---
 # These settings are synced to GitHub by the Probot Settings app.
-# Refernece: https://probot.github.io/apps/settings/.
+# Reference: https://probot.github.io/apps/settings/.
 
 repository:
   name: setup-task
@@ -40,3 +40,6 @@ labels:
   - name: stale
     color: '#e69138'
     description: Stale
+  - name: pending-close
+    color: '#b60205'
+    description: Pending Close

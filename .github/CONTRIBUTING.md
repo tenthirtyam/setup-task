@@ -1,31 +1,29 @@
 # Contributing Guidelines
 
-Thank you for your interest in contributing to our project. Whether it's a bug
-report, new feature, correction, or additional documentation, we greatly value
-feedback and contributions from our community.
+Thank you for your interest in this project.
 
-Please read through this document before submitting any issues or pull requests
-to ensure we have all the necessary information to effectively respond to your
-bug report or contribution.
+We greatly value feedback from the community.
 
-## Reporting Bugs and Suggesting Enhancements
+## Reporting
 
-We welcome you to use the [GitHub issues][gh-issues] to report bugs or suggest
-enhancements.
+Please use [GitHub Discussions][gh-discussions] for all triage, ideas, and
+general project discussion.
 
-When filing an issue, please check existing open, or recently closed, issues to
-make sure someone else hasn't already reported.
+GitHub Issues are **reserved** for maintainer-tracked work items. Discussions
+that turn into confirmed issues or accepted ideas will have a linked issue
+created by a maintainer.
 
-Please try to include as much information as you can using the issue fo. Details
-like these are incredibly useful:
+Before opening a discussion, check open and recently closed discussions to make
+sure the same thing hasn't already been reported or proposed.
 
-- A reproducible test case or series of steps.
-- Any modifications you've made relevant to the bug.
-- Anything unusual about your environment or deployment.
+## Pull Requests
 
-## Contributing via Pull Requests
+Pull requests are limited to repository collaborators.
 
-Contributions using pull requests are appreciated.
+If you are not a collaborator, please use [GitHub Discussions][gh-discussions]
+to report issues and propose ideas with the maintainer(s). If a change is
+accepted, a maintainer may invite collaboration or open the implementation
+directly.
 
 **Before** sending us a pull request, please ensure that:
 
@@ -33,25 +31,26 @@ Contributions using pull requests are appreciated.
    someone else hasn't already addressed the problem.
 2. You [open a discussion][gh-discussions] to discuss any significant work with
    the maintainer(s).
-3. You [open an issue][gh-issues] and link your pull request to the issue for
-   context. Pull requests without an accompanying issue will be closed.
-4. You are working against the latest source on the `main` branch.
+3. For changes that need tracked follow-up, you reference the relevant
+   discussion and any maintainer-created issue for context.
+4. You have collaborator access to the repository.
+5. You are working against the latest source on the `main` branch.
 
 To open a pull request, please:
 
-1. Fork the repository.
+1. Create a topic branch from the latest `main` branch.
 2. Modify the source; please focus on the **specific** change you are
    contributing.
 3. Ensure local tests pass.
-4. Updated the documentation, if required.
-5. Sign-off and commit to your fork
-   [using a clear commit messages][git-commit]. Use of
+4. Update the documentation, if required.
+5. Sign-off and commit your changes
+   [using a clear commit messages][better-git-commits]. Use of
    [Conventional Commits][conventional-commits] are required.
 6. Open a pull request, answering any default questions.
 7. Pay attention to any automated failures reported in the pull request, and
    stay involved in the conversation.
 
-GitHub provides additional documentation on [forking a repository][gh-forks] and
+GitHub provides additional documentation on
 [creating a pull request][gh-pull-requests].
 
 ### Contributor Flow
@@ -62,17 +61,18 @@ This is an outline of the contributor workflow:
 - Make commits of logical units.
 - Make sure your commit messages are
   [in the proper format][conventional-commits] **and** are signed-off.
-- Push your changes to the topic branch in your fork.
+- Push your changes to your collaborator branch.
 - Submit a pull request. If the pull request is a work in progress, open as
   draft until ready for review.
 
-> [!IMPORTANT] This project **requires** that commits are signed-off for the
-> [Developer Certificate of Origin][dco].
+> [!IMPORTANT]
+> This project **requires** that commits are signed-off for the [Developer Certificate of Origin][dco].
+> Please refer to [Signing Your Git Commits: From Zero to Verified][sign-git-commits] for more information.
 
 Example:
 
 ```shell
-git remote add upstream https://github.com/<org-name>/<repo-name>.git
+git remote add upstream https://github.com/tenthirtyam/setup-task.git
 git checkout --branch feat/add-x main
 git commit --signoff --message "feat: add support for x
   Added support for x.
@@ -85,7 +85,7 @@ git push origin feat/add-x
 
 ### Formatting Commit Messages
 
-We follow the conventions on [How to Write a Git Commit Message][git-commit] and
+We follow the conventions on [How to Write a Better Git Commit Message][better-git-commits] and
 [Conventional Commits][conventional-commits].
 
 Be sure to include any related GitHub issue references in the commit message.
@@ -142,16 +142,17 @@ ready to review, as GitHub does not generate a notification when you `git push`.
 
 ## Finding Contributions to Work On
 
-Looking at the existing issues is a great way to find something to contribute
-on. If you have an idea you'd like to discuss,
-[open a discussion][gh-discussions].
+Looking at the existing discussions and maintainer-created issues is a great
+way to find something to contribute on. If you have an idea you'd like to
+discuss, [open a discussion][gh-discussions].
 
 [dco]: https://probot.github.io/apps/dco/
 [conventional-commits]: https://conventionalcommits.org
 [gh-discussions]: https://github.com/tenthirtyam/setup-task/discussions
-[gh-forks]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+[gh-discussions-triage]: https://github.com/tenthirtyam/setup-task/discussions/new?category=triage
+[gh-discussions-ideas]: https://github.com/tenthirtyam/setup-task/discussions/new?category=ideas
 [gh-issues]: https://github.com/tenthirtyam/setup-task/issues
 [gh-markdown]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github
 [gh-pull-requests]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
-[git-commit]: https://cbea.ms/git-commit
-[license]: LICENSE
+[better-git-commits]: https://tenthirtyam.org/dispatches/2026/03/22/conventional-commits-how-to-write-a-better-git-commit-message/?h=better+git
+[sign-git-commits]: https://tenthirtyam.org/dispatches/2026/03/23/signing-your-git-commits-from-zero-to-verified/?h=sign

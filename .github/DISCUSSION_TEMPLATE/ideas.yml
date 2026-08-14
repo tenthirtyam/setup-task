@@ -1,16 +1,12 @@
 ---
-name: Enhancement
-description: Suggest an enhancement or feature to improve the action.
-title: Add support for {{ description }}
-labels: [enhancement]
-assignees: [tenthirtyam]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Before filing an enhancement or feature, please [search the existing issues](https://github.com/hashicorp/terraform-provider-vsphere/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) for related requests, and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing requests.
+        Before filing an enhancement or feature, please [search existing discussions](https://github.com/tenthirtyam/setup-task/discussions?discussions_q=is%3Aopen) for related requests, and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing requests.
 
-        When filing an enhancement issue, please include the following information.
+        When filing an ideas discussion, please include the following information.
   - type: textarea
     id: description
     attributes:
@@ -41,7 +37,7 @@ body:
     attributes:
       label: References
       description: |
-        Please provide any related GitHub issues or pull requests (open or closed) or documentation.
+        Please provide any related GitHub discussions, issues, or pull requests (open or closed) or documentation.
         Learn about [Referencing Github Issues and Pull Requests](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#referencing-issues-and-pull-requests).
       placeholder: |
         #GH-0000
