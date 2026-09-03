@@ -1,5 +1,5 @@
 ---
-labels: ["enhancement"]
+labels: ['enhancement']
 body:
   - type: markdown
     attributes:

@@ -81,6 +81,7 @@ terms and conditions of the component's license.
 | [`@eslint/plugin-kit`](https://github.com/eslint/rewrite) | Apache-2.0 |
 | [`@humanfs/core`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanfs/node`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
+| [`@humanfs/types`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanwhocodes/module-importer`](https://github.com/humanwhocodes/module-importer) | Apache-2.0 |
 | [`@humanwhocodes/retry`](https://github.com/humanwhocodes/retry) | Apache-2.0 |
 | [`@istanbuljs/load-nyc-config`](https://github.com/istanbuljs/load-nyc-config) | ISC |
@@ -109,6 +110,8 @@ terms and conditions of the component's license.
 | [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@jridgewell/trace-mapping`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@nodable/entities`](https://github.com/nodable/val-parsers) | MIT |
+| [`@parcel/watcher-darwin-arm64`](https://github.com/parcel-bundler/watcher) | MIT |
+| [`@parcel/watcher`](https://github.com/parcel-bundler/watcher) | MIT |
 | [`@pkgr/core`](https://github.com/un-ts/pkgr) | MIT |
 | [`@protobuf-ts/runtime-rpc`](https://github.com/timostamm/protobuf-ts) | Apache-2.0 |
 | [`@protobuf-ts/runtime`](https://github.com/timostamm/protobuf-ts) | (Apache-2.0 AND BSD-3-Clause) |
@@ -164,7 +167,6 @@ terms and conditions of the component's license.
 | [`browserslist`](https://github.com/browserslist/browserslist) | MIT |
 | [`bs-logger`](https://github.com/huafu/bs-logger) | MIT |
 | [`bser`](https://github.com/facebook/watchman) | Apache-2.0 |
-| [`buffer-from`](https://github.com/LinusU/buffer-from) | MIT |
 | [`callsites`](https://github.com/sindresorhus/callsites) | MIT |
 | [`camelcase`](https://github.com/sindresorhus/camelcase) | MIT |
 | [`caniuse-lite`](https://github.com/browserslist/caniuse-lite) | CC-BY-4.0 |
@@ -184,11 +186,13 @@ terms and conditions of the component's license.
 | [`dedent`](https://github.com/dmnd/dedent) | MIT |
 | [`deep-is`](https://github.com/thlorenz/deep-is) | MIT |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | MIT |
+| [`detect-libc`](https://github.com/lovell/detect-libc) | Apache-2.0 |
 | [`detect-newline`](https://github.com/sindresorhus/detect-newline) | MIT |
 | [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | ISC |
 | [`emittery`](https://github.com/sindresorhus/emittery) | MIT |
 | [`emoji-regex`](https://github.com/mathiasbynens/emoji-regex) | MIT |
 | [`error-ex`](https://github.com/qix-/node-error-ex) | MIT |
+| [`es-module-lexer`](https://github.com/guybedford/es-module-lexer) | MIT |
 | [`escalade`](https://github.com/lukeed/escalade) | MIT |
 | [`escape-string-regexp`](https://github.com/sindresorhus/escape-string-regexp) | MIT |
 | [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest) | MIT |
@@ -216,7 +220,6 @@ terms and conditions of the component's license.
 | [`flat-cache`](https://github.com/jaredwray/flat-cache) | MIT |
 | [`flatted`](https://github.com/WebReflection/flatted) | ISC |
 | [`foreground-child`](https://github.com/tapjs/foreground-child) | ISC |
-| [`fsevents`](https://github.com/fsevents/fsevents) | MIT |
 | [`gensync`](https://github.com/loganfsmyth/gensync) | MIT |
 | [`get-caller-file`](https://github.com/stefanpenner/get-caller-file) | ISC |
 | [`get-package-type`](https://github.com/cfware/get-package-type) | MIT |
@@ -261,7 +264,6 @@ terms and conditions of the component's license.
 | [`jest-matcher-utils`](https://github.com/jestjs/jest) | MIT |
 | [`jest-message-util`](https://github.com/jestjs/jest) | MIT |
 | [`jest-mock`](https://github.com/jestjs/jest) | MIT |
-| [`jest-pnp-resolver`](https://github.com/arcanis/jest-pnp-resolver) | MIT |
 | [`jest-regex-util`](https://github.com/jestjs/jest) | MIT |
 | [`jest-resolve-dependencies`](https://github.com/jestjs/jest) | MIT |
 | [`jest-resolve`](https://github.com/jestjs/jest) | MIT |
@@ -290,7 +292,6 @@ terms and conditions of the component's license.
 | [`lru-cache`](https://github.com/isaacs/node-lru-cache) | BlueOak-1.0.0 |
 | [`make-dir`](https://github.com/sindresorhus/make-dir) | MIT |
 | [`make-error`](https://github.com/JsCommunity/make-error) | ISC |
-| [`makeerror`](https://github.com/daaku/nodejs-makeerror) | BSD-3-Clause |
 | [`merge-stream`](https://github.com/grncdr/merge-stream) | MIT |
 | [`mimic-fn`](https://github.com/sindresorhus/mimic-fn) | MIT |
 | [`minimatch`](https://github.com/isaacs/minimatch) | BlueOak-1.0.0 |
@@ -300,6 +301,7 @@ terms and conditions of the component's license.
 | [`napi-postinstall`](https://github.com/un-ts/napi-postinstall) | MIT |
 | [`natural-compare`](https://github.com/litejs/natural-compare-lite) | MIT |
 | [`neo-async`](https://github.com/suguru03/neo-async) | MIT |
+| [`node-addon-api`](https://github.com/nodejs/node-addon-api) | MIT |
 | [`node-fetch`](https://github.com/bitinn/node-fetch) | MIT |
 | [`node-int64`](https://github.com/broofa/node-int64) | MIT |
 | [`node-releases`](https://github.com/chicoxyzzy/node-releases) | MIT |
@@ -335,7 +337,6 @@ terms and conditions of the component's license.
 | [`shebang-regex`](https://github.com/sindresorhus/shebang-regex) | MIT |
 | [`signal-exit`](https://github.com/tapjs/signal-exit) | ISC |
 | [`slash`](https://github.com/sindresorhus/slash) | MIT |
-| [`source-map-support`](https://github.com/evanw/node-source-map-support) | MIT |
 | [`source-map`](https://github.com/mozilla/source-map) | BSD-3-Clause |
 | [`stack-utils`](https://github.com/tapjs/stack-utils) | MIT |
 | [`string-length`](https://github.com/sindresorhus/string-length) | MIT |
@@ -349,7 +350,6 @@ terms and conditions of the component's license.
 | [`synckit`](https://github.com/un-ts/synckit) | MIT |
 | [`test-exclude`](https://github.com/istanbuljs/test-exclude) | ISC |
 | [`tinyglobby`](https://github.com/SuperchupuDev/tinyglobby) | MIT |
-| [`tmpl`](https://github.com/daaku/nodejs-tmpl) | BSD-3-Clause |
 | [`tr46`](https://github.com/Sebmaster/tr46.js) | MIT |
 | [`ts-api-utils`](https://github.com/JoshuaKGoldberg/ts-api-utils) | MIT |
 | [`ts-jest`](https://github.com/kulshekhar/ts-jest) | MIT |
@@ -366,7 +366,6 @@ terms and conditions of the component's license.
 | [`update-browserslist-db`](https://github.com/browserslist/update-db) | MIT |
 | [`uri-js`](https://github.com/garycourt/uri-js) | BSD-2-Clause |
 | [`v8-to-istanbul`](https://github.com/istanbuljs/v8-to-istanbul) | ISC |
-| [`walker`](https://github.com/daaku/nodejs-walker) | Apache-2.0 |
 | [`webidl-conversions`](https://github.com/jsdom/webidl-conversions) | BSD-2-Clause |
 | [`whatwg-url`](https://github.com/jsdom/whatwg-url) | MIT |
 | [`which`](https://github.com/isaacs/node-which) | ISC |

@@ -14,5 +14,5 @@ body:
     attributes:
       label: Acknowledgement
       options:
-        - label: ":no_good: By submitting this issue, I affirm that neglected to read the message above and can expect this item to be closed without review."
+        - label: ':no_good: By submitting this issue, I affirm that neglected to read the message above and can expect this item to be closed without review.'
           required: true
