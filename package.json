@@ -49,7 +49,7 @@
   },
   "overrides": {
     "glob": "^11.0.1",
-    "undici": "^6.28.0",
+    "undici": "^6.29.0",
     "js-yaml": "$js-yaml",
     "@actions/glob": "^0.7.0",
     "minimatch": "^10.2.5",
