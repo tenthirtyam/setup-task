@@ -71,6 +71,8 @@ terms and conditions of the component's license.
 | [`@babel/traverse`](https://github.com/babel/babel) | MIT |
 | [`@babel/types`](https://github.com/babel/babel) | MIT |
 | [`@bcoe/v8-coverage`](https://github.com/demurgos/v8-coverage) | MIT |
+| [`@cacheable/memory`](https://github.com/jaredwray/cacheable) | MIT |
+| [`@cacheable/utils`](https://github.com/jaredwray/cacheable) | MIT |
 | [`@eslint-community/eslint-utils`](https://github.com/eslint-community/eslint-utils) | MIT |
 | [`@eslint-community/regexpp`](https://github.com/eslint-community/regexpp) | MIT |
 | [`@eslint/config-array`](https://github.com/eslint/rewrite) | Apache-2.0 |
@@ -109,6 +111,8 @@ terms and conditions of the component's license.
 | [`@jridgewell/resolve-uri`](https://github.com/jridgewell/resolve-uri) | MIT |
 | [`@jridgewell/sourcemap-codec`](https://github.com/jridgewell/sourcemaps) | MIT |
 | [`@jridgewell/trace-mapping`](https://github.com/jridgewell/sourcemaps) | MIT |
+| [`@keyv/bigmap`](https://github.com/jaredwray/keyv) | MIT |
+| [`@keyv/serialize`](https://github.com/jaredwray/keyv) | MIT |
 | [`@nodable/entities`](https://github.com/nodable/val-parsers) | MIT |
 | [`@parcel/watcher-darwin-arm64`](https://github.com/parcel-bundler/watcher) | MIT |
 | [`@parcel/watcher`](https://github.com/parcel-bundler/watcher) | MIT |
@@ -155,7 +159,7 @@ terms and conditions of the component's license.
 | [`ansi-regex`](https://github.com/chalk/ansi-regex) | MIT |
 | [`ansi-styles`](https://github.com/chalk/ansi-styles) | MIT |
 | [`anymatch`](https://github.com/micromatch/anymatch) | ISC |
-| [`argparse`](https://github.com/nodeca/argparse) | Python-2.0 |
+| [`argparse`](https://github.com/nodeca/argparse) | PSF-2.0 |
 | [`babel-jest`](https://github.com/jestjs/jest) | MIT |
 | [`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) | BSD-3-Clause |
 | [`babel-plugin-jest-hoist`](https://github.com/jestjs/jest) | MIT |
@@ -167,6 +171,7 @@ terms and conditions of the component's license.
 | [`browserslist`](https://github.com/browserslist/browserslist) | MIT |
 | [`bs-logger`](https://github.com/huafu/bs-logger) | MIT |
 | [`bser`](https://github.com/facebook/watchman) | Apache-2.0 |
+| [`cacheable`](https://github.com/jaredwray/cacheable) | MIT |
 | [`callsites`](https://github.com/sindresorhus/callsites) | MIT |
 | [`camelcase`](https://github.com/sindresorhus/camelcase) | MIT |
 | [`caniuse-lite`](https://github.com/browserslist/caniuse-lite) | CC-BY-4.0 |
@@ -215,9 +220,9 @@ terms and conditions of the component's license.
 | [`fast-xml-parser`](https://github.com/NaturalIntelligence/fast-xml-parser) | MIT |
 | [`fb-watchman`](https://github.com/facebook/watchman) | Apache-2.0 |
 | [`fdir`](https://github.com/thecodrr/fdir) | MIT |
-| [`file-entry-cache`](https://github.com/jaredwray/file-entry-cache) | MIT |
+| [`file-entry-cache`](https://github.com/jaredwray/cacheable) | MIT |
 | [`find-up`](https://github.com/sindresorhus/find-up) | MIT |
-| [`flat-cache`](https://github.com/jaredwray/flat-cache) | MIT |
+| [`flat-cache`](https://github.com/jaredwray/cacheable) | MIT |
 | [`flatted`](https://github.com/WebReflection/flatted) | ISC |
 | [`foreground-child`](https://github.com/tapjs/foreground-child) | ISC |
 | [`gensync`](https://github.com/loganfsmyth/gensync) | MIT |
@@ -230,6 +235,8 @@ terms and conditions of the component's license.
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | ISC |
 | [`handlebars`](https://github.com/handlebars-lang/handlebars.js) | MIT |
 | [`has-flag`](https://github.com/sindresorhus/has-flag) | MIT |
+| [`hashery`](https://github.com/jaredwray/hashery) | MIT |
+| [`hookified`](https://github.com/jaredwray/hookified) | MIT |
 | [`html-escaper`](https://github.com/WebReflection/html-escaper) | MIT |
 | [`http-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | MIT |
 | [`https-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | MIT |
@@ -278,7 +285,6 @@ terms and conditions of the component's license.
 | [`js-tokens`](https://github.com/lydell/js-tokens) | MIT |
 | [`js-yaml`](https://github.com/nodeca/js-yaml) | MIT |
 | [`jsesc`](https://github.com/mathiasbynens/jsesc) | MIT |
-| [`json-buffer`](https://github.com/dominictarr/json-buffer) | MIT |
 | [`json-parse-even-better-errors`](https://github.com/npm/json-parse-even-better-errors) | MIT |
 | [`json-schema-traverse`](https://github.com/epoberezkin/json-schema-traverse) | MIT |
 | [`json-stable-stringify-without-jsonify`](https://github.com/samn/json-stable-stringify) | MIT |
@@ -327,6 +333,7 @@ terms and conditions of the component's license.
 | [`pretty-format`](https://github.com/jestjs/jest) | MIT |
 | [`punycode`](https://github.com/mathiasbynens/punycode.js) | MIT |
 | [`pure-rand`](https://github.com/dubzzz/pure-rand) | MIT |
+| [`qified`](https://github.com/jaredwray/qified) | MIT |
 | [`react-is`](https://github.com/facebook/react) | MIT |
 | [`require-directory`](https://github.com/troygoode/node-require-directory) | MIT |
 | [`resolve-cwd`](https://github.com/sindresorhus/resolve-cwd) | MIT |
