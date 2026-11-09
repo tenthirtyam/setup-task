@@ -7,3 +7,6 @@ coverage/
 .licenses/
 NOTICE.md
 package-lock.json
+
+# Vendored third-party source
+vendor/

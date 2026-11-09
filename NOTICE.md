@@ -86,6 +86,7 @@ terms and conditions of the component's license.
 | [`@humanfs/types`](https://github.com/humanwhocodes/humanfs) | Apache-2.0 |
 | [`@humanwhocodes/module-importer`](https://github.com/humanwhocodes/module-importer) | Apache-2.0 |
 | [`@humanwhocodes/retry`](https://github.com/humanwhocodes/retry) | Apache-2.0 |
+| [`@isaacs/nonrecursive-glob-match`](https://github.com/isaacs/nonrecursive-glob-match) | BlueOak-1.0.0 |
 | [`@istanbuljs/load-nyc-config`](https://github.com/istanbuljs/load-nyc-config) | ISC |
 | [`@istanbuljs/schema`](https://github.com/istanbuljs/schema) | MIT |
 | [`@jest/console`](https://github.com/jestjs/jest) | MIT |
