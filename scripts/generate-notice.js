@@ -12,6 +12,11 @@
 const fs = require('fs');
 const path = require('path');
 
+// Packages that publish without a repository field.
+const repositoryFallbacks = {
+  '@isaacs/nonrecursive-glob-match': 'https://github.com/isaacs/nonrecursive-glob-match'
+};
+
 // Define file paths.
 const licensesFilePath = path.resolve(__dirname, '../.licenses/licenses.json');
 const noticeFilePath = path.resolve(__dirname, '../NOTICE.md');
@@ -71,7 +76,7 @@ function generateTableRows(licensesData) {
 
     if (!uniquePackages.has(normalizedName)) {
       uniquePackages.set(normalizedName, {
-        repository: details.repository || '#',
+        repository: details.repository || repositoryFallbacks[normalizedName] || '#',
         licenses: details.licenses
       });
     }

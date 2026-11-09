@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest",
     "test:memory": "node --expose-gc --max-old-space-size=4096 node_modules/.bin/jest --runInBand --detectOpenHandles --forceExit",
-    "build": "npx tsc && npx @vercel/ncc build dist/index.js -o dist/bundle && cp -f dist/bundle/index.js dist/index.js && rm -rf dist/bundle",
+    "postinstall": "node scripts/patch-actions-glob.js",
+    "build": "node scripts/patch-actions-glob.js && npx tsc && npx @vercel/ncc build dist/index.js -o dist/bundle && cp -f dist/bundle/index.js dist/index.js && rm -rf dist/bundle",
     "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
     "format": "prettier --write .",
@@ -38,6 +39,7 @@
     "@types/node": "^26.6.6",
     "@typescript-eslint/eslint-plugin": "^8.72.1",
     "@typescript-eslint/parser": "^8.71.2",
+    "deepmerge": "file:vendor/deepmerge",
     "eslint": "^10.14.0",
     "eslint-plugin-jest": "^29.17.0",
     "globals": "^17.14.0",
@@ -52,7 +54,8 @@
     "undici": "^6.29.1",
     "js-yaml": "$js-yaml",
     "@actions/glob": "^0.7.0",
-    "minimatch": "^10.2.6",
+    "minimatch": "^11.0.5",
+    "deepmerge": "$deepmerge",
     "brace-expansion": "^5.0.12",
     "@babel/core": "^7.29.7"
   }

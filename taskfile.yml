@@ -115,7 +115,7 @@ tasks:
     cmds:
       - echo "==> Adding third-party licenses to NOTICE.md..."
       - mkdir -p .licenses
-      - npx license-checker --json > .licenses/licenses.json
+      - npx --yes license-checker --json > .licenses/licenses.json
       - node scripts/generate-notice.js
 
   release:prepare:
